@@ -60,14 +60,14 @@ Java SE/JDK/JRE의 버전을 뜻한다.
 
 21년 프로그래밍 언어 순위
 
-![about%20Java/Untitled.png](about%20Java%20b4e85093ae124552a0d276437bfe4aea/Untitled.png)
+![about%20Java/Untitled.png](about%20Java/Untitled.png)
 
 
 [https://becominghuman.ai/top-20-most-popular-programming-languages-for-2021-and-beyond-735ee8370c61](https://becominghuman.ai/top-20-most-popular-programming-languages-for-2021-and-beyond-735ee8370c61)
 
-![about%20Java/Untitled%201.png](about%20Java%20b4e85093ae124552a0d276437bfe4aea/Untitled%201.png)
+![about%20Java/Untitled%201.png](about%20Java/Untitled%201.png)
 
-![about%20Java/Untitled%202.png](about%20Java%20b4e85093ae124552a0d276437bfe4aea/Untitled%202.png)
+![about%20Java/Untitled%202.png](about%20Java/Untitled%202.png)
 
 [https://www.tiobe.com/tiobe-index/](https://www.tiobe.com/tiobe-index/)
 
