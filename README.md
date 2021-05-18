@@ -8,6 +8,6 @@
 * 최대한 추가적인 작업이 필요하지 않게 작성합니다.
 ## TIL 작성방법
 * MarkDown으로 작성합니다.
-* Notion에서 작성 후 git init폴더로 옳겨 commit, push합니다.
+* Notion또는 vscode에서 작성 후 git init폴더로 옳겨 commit, push합니다.
 * TIL→디렉토리→파일의 경로로 작성합니다.
 
