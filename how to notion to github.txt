@@ -17,3 +17,7 @@ tag: [Tips, Github io, Notion]
 이미지 경로 재지정
 
 https://swieeft.github.io/2020/03/02/NotionToGithubioPorting.html
+
+
+자동화방법
+https://ryonicho.github.io/development/etc/NotionToGithubPage/
