@@ -9,7 +9,6 @@
 * MarkDown으로 작성합니다.
 * Notion 또는 vscode에서 작성 후 git init폴더로 옳겨 commit, push합니다.
 * TIL → dir → file의 경로에 작성합니다.
-
 * Notion또는 vscode에서 작성 후 git init폴더로 옳겨 commit, push합니다.
 * TIL → 디렉토리 → 파일의 경로로 작성합니다.
 
