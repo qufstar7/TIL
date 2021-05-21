@@ -1,5 +1,4 @@
 # The secret life of programming 
-
  **Chapter 1. Language system inside the computer (2)**
 - What language does the computer use
 ***

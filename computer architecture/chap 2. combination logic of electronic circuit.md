@@ -1,12 +1,12 @@
 # The secret life of programming 
  **Chapter 2. Combination logic of electronic circuit**
 - What logic does the computer use to deal with bits
-- Computer use bit as binery boxes
-- Earlier calculation devices which doesn't use bit
-- What is needed to make bit
-- Compare older, simpler devices with modern bit devices (hardwares)
+    - Computer use bit as binery boxes
+    - Earlier calculation devices which doesn't use bit
+    - What is needed to make bit
+    - Compare older, simpler devices with modern bit devices (hardwares)
 ***
-
+***
 ## **1. 디지털 컴퓨터의 사례**
     톱니바퀴(gear)를 사용한 기계적인 계산 장치들
         1. Antikythera : 천문학 계산 (고대 그리스)
