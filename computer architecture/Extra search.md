@@ -1,4 +1,4 @@
-# Extra search of chap1
+# Extra search of The secret life of programming 
 ## 자연어와 인공어
 
 자연어 혹은 자연 언어는 사람들이 자연적으로 생성되어 일상적으로 쓰는 언어를 인공적으로 만들어진 언어인 인공어와 구분하여 부르는 개념 (한국어 처럼 국가나 민족별로 쓰이는 언어를 비롯하여 다양한 자연어가 있다)

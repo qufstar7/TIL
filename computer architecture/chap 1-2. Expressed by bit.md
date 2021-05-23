@@ -101,7 +101,7 @@
 
     2진수와 16진수 변환표
 
-    ![16binery.png](16binery.png)
+    ![image/16binery.png](image/16binery.png)
 
 
 * **8-3. 프로그래밍 언어의 진법 표기법**
