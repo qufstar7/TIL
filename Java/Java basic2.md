@@ -1,4 +1,4 @@
->> 생활코딩 java1을 학습, 정리한 내용입니다. (https://opentutorials.org/course/1)
+>> 생활코딩 java1을 학습, 정리한 내용입니다. (https://opentutorials.org/course/3930)
 
 # Java basic 2
 * 6강~10강

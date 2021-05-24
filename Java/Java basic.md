@@ -1,12 +1,11 @@
->> 생활코딩 java1을 학습, 정리한 내용입니다. (https://opentutorials.org/course/1)
+>> 생활코딩 java1을 학습, 정리한 내용입니다. (https://opentutorials.org/course/3930)
 
 # Java basic 1
 * 1강 ~ 5강
 1. 수업 소개
    * 장단점
    * 개발 언어 순위
-2. 실습 환경(java 설치)
-   1. 실습
+2. 실습 환경(java 설치)   
 3. IDE 설치(eclipse 설치)
    * IDE 종류
 4. 실행

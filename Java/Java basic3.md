@@ -1,4 +1,4 @@
->> 생활코딩 java1을 학습, 정리한 내용입니다. (https://opentutorials.org/course/1)
+>> 생활코딩 java1을 학습, 정리한 내용입니다. (https://opentutorials.org/course/3930)
 
 # Java basic 3 
 * 11강~15강  
@@ -1010,7 +1010,7 @@ public class AccountingInstanceApp {
 오후 9:25
 
 보편적인 프로그램은 개인적인 프로그램 널려있는 넓은 바다의 떠있는 섬과 같다.
-나만을 위한 프로그램을 만들며 실력을 쌓자. 내가 현실에서 편리해지길원하는 문제해결을 원하는 프로그램을 만들어 보자. 
+나만을 위한 프로그램을 만들며 실력을 쌓자. 내가 현실에서 편리해지길 원하는, 문제해결을 원하는, 꿈을 실현하는 프로그램을 만들어 보자. 
 
 ![15end_image](image/15end_image.png)
 
