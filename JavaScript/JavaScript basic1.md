@@ -1,6 +1,6 @@
 >> 생활코딩 WEB2 - JavaScript을 학습, 정리한 내용입니다. (https://opentutorials.org/course/3085)
 
-# Java basic 2
+# JavaScript basic 1
 * 1강~11강
     1. about JavaScript
     2. Script(html-js 만남)
