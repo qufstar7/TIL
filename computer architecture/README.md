@@ -1,3 +1,12 @@
+# 조너선 스타인하트의 한 권으로 읽는 컴퓨터 구조와 프로그래밍 - The secret life of programming 을 학습한 내용을 정리하였습니다. 
+[한 권으로 읽는 컴퓨터 구조와 프로그래밍 - 조너선 스타인하트](https://books.google.co.kr/books/about/%ED%95%9C_%EA%B6%8C%EC%9C%BC%EB%A1%9C_%EC%9D%BD%EB%8A%94_%EC%BB%B4%ED%93%A8%ED%84%B0_%EA%B5%AC%EC%A1%B0%EC%99%80.html?id=dXxgzgEACAAJ&redir_esc=y)
+
+![image/image%20of%20book%20front.png](image/image%20of%20book%20front.png) 
+
+
+# TIL 양식 예시
+---
+```markdown
 # The secret life of programming 
  **Chapter 0. chapter title**
 
@@ -59,8 +68,6 @@ summary
 ><**Quotation**> 
 description
 
-[추가조사자료정리페이지](Extra%20search)
-
-[한 권으로 읽는 컴퓨터 구조와 프로그래밍 - 조너선 스타인하트](https://books.google.co.kr/books/about/%ED%95%9C_%EA%B6%8C%EC%9C%BC%EB%A1%9C_%EC%9D%BD%EB%8A%94_%EC%BB%B4%ED%93%A8%ED%84%B0_%EA%B5%AC%EC%A1%B0%EC%99%80.html?id=dXxgzgEACAAJ&redir_esc=y)
-
-![image/image%20of%20book%20front.png](image/image%20of%20book%20front.png) 
+[링크이름](링크주소)
+![이미지이름](이미지경로)
+```
