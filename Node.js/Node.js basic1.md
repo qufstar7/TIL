@@ -10,8 +10,18 @@
 
 # 목차
 * chapter 1 ~ chapter 12
-    1. 
-    2. 
+    1. Node.js 소개
+    2. 목적
+    3. 설치
+    4. 웹서버 만들기
+    5. js문법-data type
+    6. URI
+    7. URI 사용
+    8. APP-동적인 웹
+    9. Node.js에서 파일읽기
+    10. App-파일 이용해 본문 구현
+    11. js문법-블리언 등
+    12. 콘솔에서의 입력값
 
 
 # Node.js 소개
