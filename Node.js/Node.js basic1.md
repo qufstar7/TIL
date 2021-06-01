@@ -37,7 +37,7 @@ Node.js를 이용해 Html을 생산하는 지루한 일을 컴퓨터에 맡기�
 * 내장 HTTP 서버 라이브러리를 포함한다.(별도의 웹 서버 소프트웨어없이 동작 가능)
 
 ![Node.js_image1](image/Node.js_image1.png)
-
+* Node.js application은 javascript를 기반으로 node.js런타임 환경에서 사용할 수 있다.
 
 # 목적
 
