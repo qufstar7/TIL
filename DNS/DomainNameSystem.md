@@ -1,4 +1,5 @@
->> 생활코딩 WEB2-Domain Name System을 학습, 정리한 내용입니다.  (https://opentutorials.org/course/3276)
+>> 생활코딩 WEB2-Domain Name System을 학습, 정리한 내용입니다.(https://opentutorials.org/course/3276)
+    
 # DomainNameSystem
 
 - 도메인 이름을 자신의 서버 컴퓨터에 부여하는 방법
