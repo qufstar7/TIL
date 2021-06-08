@@ -115,8 +115,8 @@
 * 개인, 자금력이 약한 회사.
 * sns와 같이 대규모의 데이터가 생성이 되지만 데이터의 신뢰성이 아주 중요하지는 않은 서비스에 사용.
 * 정리한 문서
-  * [MySQL basic1](MySQL%20basic1.md)
-  * [MySQL basic2](MySQL%20basic2.md)
+  * [MySQL basic1](../MySQL/MySQL%20basic1.md)
+  * [MySQL basic2](../MySQL/MySQL%20basic2.md)
 ## MongoDB
 * 관계형데이터 베이스가 아님. 
 * 다양한 데이터베이스가 새로 생겨나고 성장하고 있다.(nosql이라는 흐름)
