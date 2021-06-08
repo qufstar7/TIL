@@ -103,10 +103,10 @@
 
 ## 어떤 데이터베이스를 사용할 것인가?
 ### database ranking 2021
-![databaseRanking2021_image](image/databaseRanking2021_image.png)
->https://db-engines.com/en/ranking
-![databaseRanking2021graph_image](image/databaseRanking2021graph_image.png)
->https://db-engines.com/en/ranking_trend
+* ![databaseRanking2021_image](image/databaseRanking2021_image.png)
+    >https://db-engines.com/en/ranking
+* ![databaseRanking2021graph_image](image/databaseRanking2021graph_image.png)
+    >https://db-engines.com/en/ranking_trend
 
 ## Oracle
 * 비싸기 때문에 관공서, 자금력있는 기업에서 주로 사용한다. 
