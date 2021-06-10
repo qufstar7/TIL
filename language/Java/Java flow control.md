@@ -137,24 +137,24 @@ System.out.println(1 >= 1); //true
   * `^` 비트간 배타적 논리합 (XOR)
   * `|` 비트 포함 OR
 
->[Operators - Oracle Docs](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html)
+>출처 : [Operators - Oracle Docs](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/opsummary.html)
 
 
-
-
-
-
-조건문 형식
+# 조건문 형식
 
 2021년 4월 10일 토요일
 오후 11:59
 
-Conditional Statement 참이면 {코드}실행 거짓이면 {코드}실행x
-
+## 조건문의 실행
+* Conditional Statement 
+  * 참이면 {코드}실행 
+  * 거짓이면 {코드}실행x
+```
 if(조건) {
 	(참일 때 실행할 코드)
 }
-
+```
+```
 if(조건1) {
 	(조건1이 참일 때 실행할 코드)
 } else if (조건2) {
@@ -162,106 +162,285 @@ if(조건1) {
 } else {
 	(조건1, 2가 거짓일 때 실행할 코드)
 }
+```
 
-조건문 응용
+
+# 조건문 응용
 
 2021년 4월 11일 일요일
 오전 12:00
 
-Auth 인증
-로그인 같은 행동 후에 인증하는 과정
+## java 실습
+### 로그인 조건문
+* Auth 인증 - 로그인 같은 행동 후에 인증하는 과정
+```
 egoing > hi
 else > who are u
+```
+라는 결과가 나오게
 
-run confuguration > argument [0] egoing
+### 변수 입력
+* run confuguration > argument [0] egoing
 
-		System.out.println(args[0]);
-		String id = "egoing";
-		String inputId = args[0];
-		
-		System.out.println("hi");
-		
+```java
+    System.out.println(args[0]);
+    String id = "egoing";
+    String inputId = args[0];
+    
+    System.out.println("hi");
+    
 
-	if (inputId.equals(id) && inputPass.equals(pass)) {
-		System.out.println("Master!");
-	} else {
-		System.out.println("WHO ARE U?");
-	}
-
-
-
-
-== vs equals
-
-2021년 4월 11일 일요일
-오전 12:00
+if (inputId.equals(id) && inputPass.equals(pass)) {
+    System.out.println("Master!");
+} else {
+    System.out.println("WHO ARE U?");
+}
+```
 
 
-primitive 원시 데이터 타입 - 블리언 정수 실수 숏 롱 플롯 캐릭터
-
-
-결론 원시 데이터 타입이 아닐 떄는 ==대신  equals를 쓰자
-
-논리 연산자
+# == vs equals
 
 2021년 4월 11일 일요일
 오전 12:00
 
-		// AND
-		System.out.println(true && true); // true
-		System.out.println(true && false); // false
-		System.out.println(false && true); // false
-		System.out.println(false && false); // false
+## 원시 데이터 타입
+![primitiveDatatype_image](image/primitiveDatatype_image.png)
+* primitive 원시 데이터 타입 - 블리언 정수 실수 숏 롱 플롯 캐릭터
+  
+## 원시 데이터가 아닌 데이터 타입
+![nonPrimitiveDatatype_image](image/nonPrimitiveDatatype_image.png)
 
-		// OR
-		System.out.println(true || true); // true
-		System.out.println(true || false); // true
-		System.out.println(false || true); // true
-		System.out.println(false || false); // false
+## 결론 
+* 원시 데이터 타입이 아닐때는 ==대신  equals를 쓰자
 
-		// not
-		System.out.println(!true); // false
-		System.out.println(!false); // true
-		
-		
-				String id = "egoing";
-				String inputId = args[0];
-		
-				String pass = "1111";
-				String pass2 = "2222";
-				String inputPass = args[1];
-		
-				System.out.println("hi");
-				
-				boolean isRightPass = (inputPass.equals(pass) || inputPass.equals(pass2)) ;
-				if (inputId.equals(id) && isRightPass) {
-					System.out.println("Master!");
-				} else {
-					System.out.println("WHO ARE U?");
-				}
-		
 
-반복문
+# 논리 연산자
 
 2021년 4월 11일 일요일
 오전 12:00
 
-배열
+```java
+// AND
+System.out.println(true && true); // true
+System.out.println(true && false); // false
+System.out.println(false && true); // false
+System.out.println(false && false); // false
+
+// OR
+System.out.println(true || true); // true
+System.out.println(true || false); // true
+System.out.println(false || true); // true
+System.out.println(false || false); // false
+
+// not
+System.out.println(!true); // false
+System.out.println(!false); // true
+```		
+```java
+String id = "egoing";
+String inputId = args[0];
+
+String pass = "1111";
+String pass2 = "2222";
+String inputPass = args[1];
+
+System.out.println("hi");
+
+boolean isRightPass = (inputPass.equals(pass) || inputPass.equals(pass2)) ;
+if (inputId.equals(id) && isRightPass) {
+    System.out.println("Master!");
+} else {
+    System.out.println("WHO ARE U?");
+}
+```		
+
+# 반복문
 
 2021년 4월 11일 일요일
 오전 12:00
 
-반복문+배열
+```java
+while (조건) {
+반복할 코드
+}
+```
+## 실습
+
+```java
+while (true) {
+	System.out.println(2);
+	System.out.println(3);
+}
+```
+* 무한 반복 의도하지 않았다면 굉장히 심각한 오류.
+
+```java
+System.out.println("=== while ===");
+int i = 0;
+while (i < 3) {
+	System.out.println(2);
+	System.out.println(3);
+//			i = i + 1;
+	i++;
+}
+```
+* i 변수를 이용해 i의 값을 반복할 때마다 1씩 증가 시키며 i < 3 라는 조건을 이용해 3번 반복하게 만든다.
+
+```java
+System.out.println("=== for ===");
+		for (int j = 0; j < 3; j++) {
+			System.out.println(2);
+			System.out.println(3);
+		}
+```
+1. int j = 0 을 무조건 한번만 실행 하고
+2.   j++이 실행되고
+3.   j<3이 실행되고 (true면 다시 2, 3 반복)
+
+* while 에서는 ini = 0; / i++; / i<3이 떨어져 있어서 코드가 많아지면 간섭으로 인해 망가질 가능성이 높다.
+
+* 하지만 for문에서는 반복문과 관련된 필수요소들이 응집되어 있어 관리하기 편하다.
+
+
+# 배열
+
+2021년 4월 11일 일요일
+오전 12:00
+```java
+String[] users = new String[3];
+users[0] = "egoing";
+users[1] = "junhuck";
+users[2] = "youbin";
+```
+
+```java
+System.out.println(users[1]);
+System.out.println(users.length);
+
+int[] scores = {10, 100, 100};
+System.out.println(scores[1]);
+System.out.println(scores.length);
+```
+![javaflowcontrolArray_image](image/javaflowcontrolArray_image.png)
+
+
+# 반복문+배열
 
 2021년 4월 11일 일요일
 오전 12:00
 
-종합응용 1
+## 실습내용
+
+```java
+//		<li>egoing</li>
+//		<li>jinhuck</li>
+//		<li>youbin</li>
+```
+
+```java
+String[] users = new String[3];
+users[0] = "egoing";
+users[1] = "junhuck";
+users[2] = "youbin";
+
+for (int i = 0; i < users.length; i++) {
+    System.out.println("<li>"+users[i]+"</li>");
+}
+```
+```java
+<li>egoing</li>
+<li>junhuck</li>
+<li>youbin</li>
+```
+
+
+# 종합응용 1
 
 2021년 4월 11일 일요일
 오전 12:00
 
-종합응용 2
+```java
+String[] users = { "egoing", "jinhuck", "youbin" };
+String inputId = args[0];
+
+boolean isLogined = false; // 플래그변수
+for (int i = 0; i < users.length; i++) {
+    String currentId = users[i];
+    if (currentId.equals(inputId)) {
+        isLogined = true;
+        break; // 반복문 종료
+    }
+}
+System.out.println("Hi,");
+if (isLogined) {
+    System.out.println("Master!!");
+} else {
+    System.out.println("Who are you?");
+}
+```
+
+* run configuration에서 arguments 설정.
+
+* egoing을 넣으면
+    ```
+    Hi,
+    Master!!
+    ```
+* 다른 값을 넣으면
+    ```
+    Hi,
+    Who are you?
+    ```
+
+
+# 종합응용 2
 
 2021년 4월 11일 일요일
 오전 12:00
+
+```java
+//String[] users = { "egoing", "jinhuck", "youbin" };
+// [][] 배열 안에 배열. users의 각 원소가 배열이고 각각의 배열의 원소의 값은 string
+String[][] users = {
+        {"egoing", "1111"},
+        {"jinhuck", "2222"},
+        {"youbin", "3333"}
+};
+String inputId = args[0];
+String inputPwd = args[1];
+
+
+boolean isLogined = false; // 플래그변수
+for (int i = 0; i < users.length; i++) {
+    String[] current = users[i];
+    if (
+            current[0].equals(inputId) &&
+            current[1].equals(inputPwd)
+    ) {
+        isLogined = true;
+        break; // 반복문 종료
+    }
+}
+System.out.println("Hi,");
+if (isLogined) {
+    System.out.println("Master!!");
+} else {
+    System.out.println("Who are you?");
+}
+```
+* run configuration에서 arguments 설정
+* 'egoing 1111'로 설정한 값(올바른 값) 실행시
+    ```
+    Hi,
+    Master!!
+    ```
+* 'youbin 2222'로 설정한 값(잘못된 패스워드) 실행시
+    ```
+    Hi,
+    Who are you?
+    ```
+* 'leezche 1111'로 설정한 값(없는 값) 실행시
+    ```
+    Hi,
+    Who are you?
+    ```
