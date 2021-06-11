@@ -349,7 +349,7 @@ BB
 
 # 클래스-존재이유와 기본형식
 
-클래스를 도입해서  printA(); 를 Print.A();로, 즉 Print클래스에 소속된 A메소드로 바꿔보자.
+클래스를 도입해서  `printA();` 를 `Print.A();`로, 즉 Print클래스에 소속된 A메소드로 바꿔보자.
 
 ```java
 public class MyOOP {
@@ -514,7 +514,7 @@ public class MyOOP {
 
 Original source와 Refactored source를 확인 할 수 있다. 
 
-`Print.java` 파일이 생성되고 코드가 옳겨져 있는 것을 확인 할 수 있다.
+Print.java 파일이 생성되고 코드가 옳겨져 있는 것을 확인 할 수 있다.
 
 ```java
 class Print {
@@ -564,7 +564,7 @@ public class MyOOP {
   * 'The type 클래스명 is already defined'
   * 위와 같은 에러 메세지가 클래스명에 뜨면 중복된 클래스가 같은 폴더나 패키지 안에 있는 것. 
   * 중복된 클래스명이 없어도 뜨면 
-  * `project > clean`해준다.
+  * project > clean해준다.
 
 
 
@@ -589,12 +589,12 @@ public class MyOOP {
 		f1.write(" java");
 		f1.close();	
 ```
-* `FileWriter class`
-  * 여기서 `FileWriter` 클래스는 java.io소속의 미리 등록되어있는 남이 만들어 놓은 클래스이고,
+* FileWriter class
+  * 여기서 FileWriter 클래스는 java.io소속의 미리 등록되어있는 남이 만들어 놓은 클래스이고,
 
 * `f1 instance`
-  * `f1`이라고 우리가 이름 붙이긴 했지만 이 인스턴스도 결국 `FileWriter`의 복제품이기에 남의 클래스의 기능을 복제한 남의 인스턴스라고 할 수 있다. 
-  * `f1.write`에서 `write`는 `java.io.Writer.`에 속한, `Writer`클래스에 속한 메소드로서 기능을 구현해 주고 있다.
+  * `f1`이라고 우리가 이름 붙이긴 했지만 이 인스턴스도 결국 FileWriter의 복제품이기에 남의 클래스의 기능을 복제한 남의 인스턴스라고 할 수 있다. 
+  * `f1.write`에서 `write`는 java.io.Writer.에 속한, Writer클래스에 속한 메소드로서 기능을 구현해 주고 있다.
 
 직접 인스턴스를 만들어서 나의 인스턴스를 사용해 보자.
 
@@ -640,7 +640,7 @@ class Print {
 }
 ```
 
-위 코드를 보면 Print라는 하나의 클래스의 delimiter라는 상태를 여러 번 바꿔주고 있다.
+위 코드를 보면 Print라는 하나의 클래스의 `delimiter`라는 상태를 여러 번 바꿔주고 있다.
 
 ```java
 		Print.delimiter = "----";	
@@ -909,8 +909,8 @@ public class StaticApp {
 ### 1. 변수
 
 - `classVar` 는 클래스의 소속이므로 f1에는 실제 값이 존재하지 않고 Foo라는 클래스를 가리키고 있을 뿐이다.
-- `instanceVar는` `Foo에서` `f1이라는` 인스턴스가 생성될 때 `instanceVar` 라는 변수가 생성되면서 만약 클래스의 값도 세팅되어 있다면 그 값까지 복제가 된다.
-- 그리고 클래스의 `instanceVar와` 인스턴스의 `instanceVar는` 서로 링크 걸려있지 않기 때문에 인스턴스의 `instanceVar` 값을 바꿔도 클래스의 `instanceVar값이` 바뀌지 않는다. 반면 `classVar는` 서로의 값에 영향을 받는다. (굉장히 무척 중요한 차이)
+- `instanceVar`는 `Foo`에서 `f1`이라는 인스턴스가 생성될 때 `instanceVar` 라는 변수가 생성되면서 만약 클래스의 값도 세팅되어 있다면 그 값까지 복제가 된다.
+- 그리고 클래스의 `instanceVar`와 인스턴스의 `instanceVar`는 서로 링크 걸려있지 않기 때문에 인스턴스의 `instanceVar` 값을 바꿔도 클래스의 `instanceVar`값이 바뀌지 않는다. 반면 `classVar`는 서로의 값에 영향을 받는다. (굉장히 무척 중요한 차이)
 
 ### 2. 메소드
 
@@ -955,7 +955,7 @@ public class StaticApp {
 FileWriter f1 = new FileWriter("data.txt");
 ```
 
-위의 코드는 `FilWriter`라는 남이 만든 클래스를 사용하여 `f1`인스턴스를 만든 코드인데
+위의 코드는 FilWriter라는 남이 만든 클래스를 사용하여 `f1`인스턴스를 만든 코드인데
 
 "data.txt" 에 처음 인스턴스를 생성할때 꼭 파일명을 작성해 줘야한다. 
 
@@ -1012,11 +1012,11 @@ class Print {
 
 위의 맥락에서 생성자의 파라미터인 `_delimiter` 값은 `"——"` (마이너스 4개) 가 되고
 
-`delimiter = _delimiter;` 이기 때문에 `Print` 클래스의 `delimiter` 값도 마이너스 4개가 된다
+`delimiter = _delimiter;` 이기 때문에 Print 클래스의 `delimiter` 값도 마이너스 4개가 된다
 
-따라서 `A` 메소드를 호출하면 `——`와 `AA AA`가 호출된다. 생성자는 클래스의 이름과 똑같은 메소드를 정의하면 되고 `static`, `return datatype` 과 같은 것을 지정하지 않는다.
+따라서 A 메소드를 호출하면 `——`와 `AA AA`가 호출된다. 생성자는 클래스의 이름과 똑같은 메소드를 정의하면 되고 `static`, `return datatype` 과 같은 것을 지정하지 않는다.
 
-그런데 `_delimiter`에서 _를 빼면 클래스의 변수가 세팅되지 않는다. 이때 **`this.`**를 붙여준다.
+그런데 `_delimiter`에서 `_`를 빼면 클래스의 변수가 세팅되지 않는다. 이때 **`this.`**를 붙여준다.
 
 ```java
 class Print {
@@ -1040,7 +1040,7 @@ class Print {
 }
 ```
 
-***this는 생성한 인스턴스를 가리키는 이름이다.***
+***`this`는 생성한 인스턴스를 가리키는 이름이다.***
 
 
 ---
@@ -1102,7 +1102,7 @@ public class AccountingApp {
 }
 ```
 
-`Accounting` 클래스를 만들고 연관된 메소드와 변수를 옳겨 주고 `Accounting.`으로 App에 연결해주었다.
+Accounting 클래스를 만들고 연관된 메소드와 변수를 옳겨 주고 `Accounting.`으로 App에 연결해주었다.
 
 ***
 
