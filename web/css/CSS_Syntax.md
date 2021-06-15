@@ -9,6 +9,7 @@
 
 ## CSS syntax
 * selector와 선언문으로 구성되는 css 규칙(문법)
+
 ![CSSsyntax_image](image/CSSsyntax_image.png)
 
 ### Selector (선택자)
