@@ -15,12 +15,58 @@
 * 간략하게 매일 학습하고 코딩한 내용은 TIL(daily)는 velog에 기록합니다.
 
 ## markdown 참고 문법
-    ><**Quotation**> 
-    description
+>참고 : [위키독스 마크다운](https://wikidocs.net/1678)
+### 인용구
+```
+><**Quotation**> 
+description
+```
+><**Quotation**> 
+description
 
-    [link example](link%20examnple)
+### 링크
+```
+[link example](link%20examnple)
+```
+[link example](link%20examnple)
 
-    ![image/example%20image.png](image/example%20image.png)
+### 이미지
+```
+![image/example%20image.png](image/example%20image.png)
+
+```
+![image/example%20image.png](image/example%20image.png)
+
+### 목차
+```
+[TOC]
+```
+[TOC]
+
+### 파이프문자
+```
+&#124; 
+```
+&#124; 
+
+### 강제 줄 바꿈  
+줄 끝에 공백(space)을 두 개 추가
+```
+첫번째 줄  
+두번째 줄 
+```
+첫번째 줄  
+두번째 줄
+
+### 각주
+```
+각주를 달고 싶은 문장 [^myfootnote]
+
+[^myfootnote]: 각주에 대한 설명
+```
+각주를 달고 싶은 문장 [^myfootnote]
+
+[^myfootnote]: 각주에 대한 설명
 
 ## TIL 예시
 ```markdown
