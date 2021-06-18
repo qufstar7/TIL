@@ -262,8 +262,8 @@ undefined
 
 # 비교
 ## if문
-* 선택적으로 조건이 거짓인 경우 코드 실행시 else 사용
-* 여러 개의 else if를 사용하여 다양한 조건을 사용 가능
+* 선택적으로 조건이 거짓인 경우 코드 실행시 `else` 사용
+* 여러 개의 `else if`를 사용하여 다양한 조건을 사용 가능
 * 여러 줄일 때는 주로 브레이스(블록문)안에 코드 작성
 * 블록문을 사용하는 것이 좋은 습관이다. 언제 코드를 추가하여 복잡한 조건문을 구성하게 될지 모르고 가독성이 좋기 때문
 1. 브레이스 `{}` 있게
@@ -288,12 +288,12 @@ undefined
     ```
     * 값이 있다. > ok
 ### 거짓으로 취급하는 값
-* false
-* undefined
-* null
-* 0
-* NaN
-* the empty string ("")
+* `false`
+* `undefined`
+* `null`
+* `0`
+* `NaN`
+* `the empty string ("")`
 
 ## switch문
 ```javascript
@@ -333,8 +333,8 @@ function howMany(selectObject) { // selectObject라는 객체
 ```
 ## 성능개선
 ### length 변수 선언
-* .length를 사용하여 반복시킬 경우 해당 배열을 반복할 때마다 접근하기 때문에 비효율적이다.
-* .length이 고정된 값이므로 따로 변수 선언하여 사용한다.
+* `.length`를 사용하여 반복시킬 경우 해당 배열을 반복할 때마다 접근하기 때문에 비효율적이다.
+* `.length`이 고정된 값이므로 따로 변수 선언하여 사용한다.
     ```javascript
     var arr = [1,2,3];    
     for(var i=0, len= arr.length; i<len; i++){
@@ -376,8 +376,221 @@ function howMany(selectObject) { // selectObject라는 객체
 
 
 # 함수
+## 함수 - 함수의 선언
+함수는 여러개의 인자를 받아서, 그 결과를 출력한다.  
+파라미터의 갯수와 인자의 갯수가 일치하지 않아도 오류가 나지 않는다.  
+파라미터가 1개일때, 인자의 갯수가 0개라면, 파라미터(매개변수)는 `undefined`이라는 값을 갖게 된다.  
+값이 할당되지 않았기 때문이다.
+```javascript
+function printName(firstname) {
+    var myname = "jisu";
+    return myname + " " + firstname;
+}
+```
+>> firstname이 파라미터
+>> var로 지역변수 선언 (함수 내에서만 유효한 변수)
+
+## 함수 - 함수표현식
+함수는 아래 `printName`과 같이 표현할 수도 있다.  
+이렇게 표현하면 함수선언문과 달리 선언과 호출순서에 따라서 정상적으로 함수가 실행되지 않을 수 있다.
+```javascript
+function test() { 
+    console.log(printName()); 
+    var printName = function() {
+        return 'anonymouse';
+    }
+}
+
+test();
+//TypeError: printName is not a function
+```
+함수 표현식보다 함수 선언문을 더 자주 사용하지만, 어떤 코딩컨벤션에서는 함수 표현식을 권장하기도  
+어떤 컨벤션을 갖던지 한가지만 정해서 사용하는 게 좋다.
 
 
+## 함수 - 표현식과 호이스팅
+
+앞선 코드에서,  
+`printName`이 "printName이 is not defined" 이라고 오류가 나오지 않고,  
+`function`이 아니라고 나온 이유는  
+`printName`이 실행되는 순간 `'undefined'`으로 지정됐기 때문입니다.
+
+자바스크립트 함수는 실행되기 전에 함수 안에 필요한 변수값들을 미리 다 모아서 선언합니다.
+
+함수 안에 있는 변수들을 모두 끌어올려서 선언한다고 해서, 이를 hoisting이라고 합니다.
+(실제로 코드가 끌어올려지는 건 아니며<이 과정이 눈에 보이는 게 아니죠>, 자바스크립트 파서 내부적으로 그렇게 끌어올려서 처리하는 것입니다)
+
+따라서 아래 코드 역시 함수를 값으로 가지지만 어쨌든 `printName`도 변수이므로 끌어올려지고, 값이 할당되기 전에 실행됐으므로 `undefined`가 할당된 상태입니다.
+```javascript
+printName(); //아직, printName이 undefined으로 할당된 상태다. 
+var printName = function(){}
+```
+`printName`이라는 변수가 존재하고 아직 값이 할당되기 전이므로 `printName`에는 `'undefined'`이라는 기본 값이 할당된 셈입니다.
+
+## 함수 - 반환값과 `undefined`
+
+아래 함수의 반환값은? 
+```javascript
+function printName(firstname) {
+    var myname = "jisu";
+    var result = myname + " " +  firstname;
+}
+```
+정답은 `undefined`입니다.
+
+자바스크립트 함수는 반드시 return값이 존재하며,  
+없을 때는 기본 반환값인 `'undefined'`가 반환됩니다.
+
+자바스크립트에서는 `void` 타입이 없습니다. 
+
+## 함수 - arguments 객체
+
+함수가 실행되면 그 안에는 `arguments`라는 특별한 지역변수가 자동으로 생성됩니다.
+
+arguments의 타입은 객체 입니다.(`console.log(typeof arguments)` 로 확인해보세요!)
+
+자바스크립트 함수는 선언한 파라미터보다 더 많은 인자를 보낼 수도 있습니다.
+
+이때 넘어온 인자를 `arguments`로 배열의 형태로 하나씩 접근할 수가 있습니다.
+
+`arguments`는 배열타입은 아닙니다.
+
+따라서 배열의 메서드를 사용할 수가 없습니다.
+
+```javascript
+function a() {
+ console.log(arguments);
+}
+a(1,2,3);
+```
+출력값
+```
+{ '0': 1, '1': 2, '2': 3 }
+```
+배열보다 객체에 가깝다.
+
+자바스크립트의 가변인자를 받아서 처리하는 함수를 만들 때 등에서 `arguments`속성을 유용하게 사용
+
+## 응용해보기
+`arguments`속성을 사용해서 , 1~무한대까지 인자를 받아 합을 구하는 함수를 만들어봅시다.
+```javascript
+function sum() {
+  var result = 0;
+  for (var i = 0; i < arguments.length; i++) {
+    result += arguments[i];
+  }
+  console.log(result);
+}
+sum(1, 2, 3);
+```
+
+## 생각해보기
+
+1. `arrow function`
+ES2015에는 `arrow function`이 추가됐다.
+
+간단하게 함수를 선언할 수 있는 문법으로 처음에는 꽤 낯설다.
+
+하지만 점점 많이 사용되고 있는 syntax
+
+```javascript
+function getName(name) {
+   return "Kim " + name ;
+}
+
+//위 함수는 아래 arrow함수와 같다.
+var getName = (name) => "Kim " + name;
+```
+
+## MDN 참고
+[arrow function 참고 바로가기](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+```javascript
+// Traditional Function
+function (a){
+  return a + 100;
+}
+
+// Arrow Function Break Down
+
+// 1. Remove the word "function" and place arrow between the argument and opening body bracket
+(a) => {
+  return a + 100;
+}
+
+// 2. Remove the body brackets and word "return" -- the return is implied.
+(a) => a + 100;
+
+// 3. Remove the argument parentheses
+a => a + 100;
+```
 
 
 # 함수 호출
+보통 함수 하나에 모든 로직을 넣지 않기 때문에  
+함수를 연속적으로 A에서 B, B에서 C 이런식으로 할 수도 있고,  
+재귀 함수라해서 자기 자신을 부를 수 도 있다.  
+
+A에서 B, B에서 A와 같은 무한루프의 함수만 아니면 된다.
+
+## 함수 호출 방식
+자바스크립트의 함수는 이렇게 호출된다.
+`run`이 호출되고 그 다음에 `printName`이 호출되는 함수
+```js
+function printName(firstname) {
+  var myname = "jisu";
+  return myname + " ," + firstname;
+}
+
+// 프로그램 순서 - 13, 7, 8, 9, (1, 2, 3, 4), 9(result), 10, 11
+function run(firstname) {
+  firstname = firstname || "Youn"; // true면 firstname, false면 Youn
+  var result = printName(firstname);
+  console.log(result);
+}
+
+run(); // undefined >> false ... firstname = "Youn"
+```
+
+
+
+## 함수호출과 stack
+> [Understanding Javascript Function Executions — Call Stack, Event Loop , Tasks & more](https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec)
+```js
+function foo(b){
+    var a = 5;
+    return a * b + 10;
+} 
+
+function bar(x){
+    var y = 3;
+    return foo(x * y);
+}
+
+console.log(bar(6));
+```
+
+### 함수 호출 관계
+`bar() → foo()`
+
+메모리에서 순서대로 스택이 쌓인다.
+
+bar 함수에서 foo를 호출한 후 foo 함수의 결과를 받아올 때까지 bar함수는 메모리 공간에서 사라지지 못하고 기다리고 있는 것
+
+foo의 경우에는 실행이 끝나고 return문이 실행되면 메모리 공간에서 사라진다.
+
+다시 말해서 Call Stack에서 없어지는 것
+
+call stack은 이렇게 동작하지만,  
+함수를 연속적으로 계속 호출하면 call stack이 꽉 차버리면서  
+더 실행되지 못하고 오류가 발생할 것.
+
+브라우저에서는 대부분 지정된 횟수만큼만 call stack을 쌓게 미리 설정해둔 경우가 많다
+
+### **"Maximum call stack size exceeded" 오류**
+무한 루프에 빠진 함수 호출이다.  
+스택이 터져버린다고 표현한다.  
+그래서 프로그램이 멈추던가 시스템이 다운되버릴 수도 있는데  
+대부분의 브라우저가 정해놓은 한계에 막혀 큰 오류는 방지한 것.  
+무한루프에 빠진 함수호출관계를 찾아서 수정한다.
+ 
