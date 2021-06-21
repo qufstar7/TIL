@@ -1,4 +1,5 @@
-# JavaScript FrontEnd build
+> 부스트코스 - 웹 프로그래밍(풀스택)강의를 학습, 정리한 내용입니다.(https://www.boostcourse.org/web316/joinLectures/12943)
+# JavaScript FrontEnd
 ## 자바스크립트 관련 자료
 1. >D2 포스트[2020년과 이후 JavaScript의 동향 - JavaScript(ECMAScript)](https://d2.naver.com/helloworld/4268738)
 2. >제트브레인 설문[devecosystem-2020/javascript](https://www.jetbrains.com/ko-kr/lp/devecosystem-2020/javascript/)
