@@ -161,7 +161,7 @@ jsp와는 상관없지만 이클립스 프로젝트 생성시의 디렉토리 �
   * 표준 Maven 프로젝트 구조로 인식된다 (Maven 프로젝트에서 제대로 작동하려면 Maven 플러그인을 설치하고 프로젝트를 Maven과 연결해야 한다.)
 
 ### Maven 
->http://maven.apache.org/
+>http://maven.apache.org/  
 >http://maven.apache.org/what-is-maven.html
 * 자바용 프로젝트 관리 도구
 * C#, Ruby, Scala등에서도 프로젝트 관리 도구로 사용 가능(거의 사용 x)
