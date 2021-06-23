@@ -1,9 +1,6 @@
-https://programmers.co.kr/tryouts/3930/challenges?original_test_id=26831&original_token=a58ff2c7c8c7ca975e1f523aadf105b2#
+> https://programmers.co.kr/tryouts/3930/challenges?original_test_id=26831&original_token=a58ff2c7c8c7ca975e1f523aadf105b2#
 # Demo test
 ## [부스트캠프 웹·모바일 2021] 1차 온라인 코딩테스트
-김준하  
-100분, 알고리즘 2문제, 객관식/주관식 10문제  
-데모 테스트
  
 ## 프로그래밍1
 ### 문제 설명
