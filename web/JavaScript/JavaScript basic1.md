@@ -1,28 +1,34 @@
 >> 생활코딩 WEB2 - JavaScript을 학습, 정리한 내용입니다. (https://opentutorials.org/course/3085)
 
 # JavaScript basic 1
-* 1강~11강
-    1. about JavaScript
-    2. Script(html-js 만남)
-    3. Event(html-js 만남)
-    4. Console(html-js 만남)
-    5. 변수와 대입연산자
-    6. 웹브라우저 제어    
-    7. css기초
-    8. 제어할 태그 선택하기
-    9. 프로그램, 프로그래밍, 프로그래머
-    10. 비교연산자와 블리언
-    11. 조건문
-    12. 리팩토링 중복의 제거
-    13. 배열
-    14. 반복문
-    15. 배열과 반복문
-    16. 함수
-    17. 객체
-    18. 파일로 쪼개서 정리 정돈 하기
-    19. 라이브러리와 프레임워크
-    20. UI vs API
-    21. 추가 공부할 주제
+- [JavaScript basic 1](#javascript-basic-1)
+- [1. about JavaScript](#1-about-javascript)
+  - [JavaScript는?](#javascript는)
+    - [라이브러리](#라이브러리)
+    - [역사](#역사)
+    - ["Hello, World!" 프로그램](#hello-world-프로그램)
+    - [기본적인 문법](#기본적인-문법)
+    - [자바스크립트의 리터럴](#자바스크립트의-리터럴)
+- [2. script](#2-script)
+- [3. event](#3-event)
+  - [이벤트란?](#이벤트란)
+- [4. console](#4-console)
+  - [----연습내용-----](#----연습내용-----)
+- [5. 변수와 상수, 연산자](#5-변수와-상수-연산자)
+    - [Variable vs constant](#variable-vs-constant)
+- [6. 웹브라우저 제어](#6-웹브라우저-제어)
+- [7. 간단한 Css문법](#7-간단한-css문법)
+- [8. 제어할 태그 선택하기](#8-제어할-태그-선택하기)
+- [9. 프로그램, 프로그래밍, 프로그래머](#9-프로그램-프로그래밍-프로그래머)
+    - [HTML과 프로그래밍](#html과-프로그래밍)
+    - [프로그래밍 언어란?](#프로그래밍-언어란)
+- [10. 비교 연산자와 블리언](#10-비교-연산자와-블리언)
+- [11. 조건문](#11-조건문)
+- [11-2. 조건문의 활용](#11-2-조건문의-활용)
+  - [참고 자료](#참고-자료)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # 1. about JavaScript
 ## JavaScript는?

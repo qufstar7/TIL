@@ -10,13 +10,33 @@
     - git products
 
 # 목차
-* chapter 1 ~ chapter 6
-    1. git
-    2. 버전관리
-    3. 백업
-    4. 협업
-    5. git의 종류
-    6. 정리, 심화주제
+- [수업소개](#----)
+  * [지옥에서 온 정보관리자](#------------)
+  * [git](#git)
+    + [이고잉님이 말하는 깃의 3대 목적](#-------------3----)
+- [버전관리](#----)
+  * [git 공식 웹사이트](#git--------)
+  * [git version control](#git-version-control)
+  * [git version control 과정(실습)](#git-version-control-------)
+- [백업](#--)
+  * [백업의 이유](#------)
+    + [github desktop, github.com에서 백업 실습](#github-desktop--githubcom--------)
+- [협업](#--)
+  * [collaborate](#collaborate)
+  * [git collaborate의 간단한 원리](#git-collaborate--------)
+  * [git collaborate 과정](#git-collaborate---)
+    + [github 협업 가이드](#github-------)
+- [git의 종류](#git----)
+  * [git](#git-1)
+    + [깃 제품군에서 다양한 제품들](#---------------)
+- [정리, 심화주제](#--------)
+  * [깃, 버전관리가 무엇인지](#-------------)
+  * [심화학습](#----)
+    + [1. Git CLI](#1-git-cli)
+    + [2. GUI 환경의 GIT](#2-gui-----git)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 # 수업소개

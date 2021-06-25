@@ -1,35 +1,77 @@
 >> 생활코딩 java1을 학습, 정리한 내용입니다. (https://opentutorials.org/course/3930)
 
 # Java basic 3 
-* 11강~15강  
-11. 입력과 출력
-    1. 입력과 출력
-    2. arguments & parameter
-12. 직접 컴파일하고 실행하기
-    1.  소개
-    2.  실행환경 살펴보기
-    3.  컴파일과 실행하기
-    4.  라이브러리 이용
-    5.  입력과 출력
-13. 자바 문서 보는 법
-    1.  API vs UI
-    2.  패키지, 클래스, 변수, 메소드
-    3.  클래스
-    4.  인스턴스
-    5.  상속
-14. 나의 앱 만들기(myApp)
-    1.  오리엔테이션
-    2.  기본기능구현
-    3.  변수 도입
-    4.  입력값 도입
-    5.  오리엔테이션2
-    6.  조건문
-    7.  배열
-    8.  반복문
-    9.  메소드
-    10. 클래스
-    11. 인스턴스
-15. 수업을 마치며
+- [Java basic 3](#java-basic-3)
+- [11.1 입력과 출력](#111-입력과-출력)
+- [11.2 I/O : arguments & parameter](#112-io--arguments--parameter)
+    - [자바에서 arguments 와 parameter는 다르다? 같다?](#자바에서-arguments-와-parameter는-다르다-같다)
+    - [결론](#결론)
+    - [인자 입력(설정) 방법](#인자-입력설정-방법)
+- [12.1 직접 컴파일하고 실행](#121-직접-컴파일하고-실행)
+    - [직접 프로그램을 컴파일하고 실행하는 방법](#직접-프로그램을-컴파일하고-실행하는-방법)
+    - [import java file](#import-java-file)
+- [12.2 직접 컴파일하고 실행 - 실행환경 살펴보기](#122-직접-컴파일하고-실행---실행환경-살펴보기)
+  - [자바 cmd 기본 명령어](#자바-cmd-기본-명령어)
+  - [환경변수 설정](#환경변수-설정)
+- [12.3 직접 컴파일하고 실행 - 컴파일과 실행하기](#123-직접-컴파일하고-실행---컴파일과-실행하기)
+  - [terminal 명령어](#terminal-명령어)
+    - [windows](#windows)
+    - [mac](#mac)
+    - [path 경로](#path-경로)
+  - [terminal에서 자바 파일 컴파일](#terminal에서-자바-파일-컴파일)
+- [12.4 직접 컴파일하고 실행 - 라이브러리 이용](#124-직접-컴파일하고-실행---라이브러리-이용)
+- [12.5 직접 컴파일하고 실행 - 입력과 출력](#125-직접-컴파일하고-실행---입력과-출력)
+- [13.1 자바문서 보는법 - API vs UI](#131-자바문서-보는법---api-vs-ui)
+    - [자바가 제공하는 부품](#자바가-제공하는-부품)
+    - [API](#api)
+    - [UI](#ui)
+    - [컴퓨터의 사용자 인터페이스](#컴퓨터의-사용자-인터페이스)
+- [13.2 자바문서 보는법 - 패키지, 클래스, 변수, 메소드](#132-자바문서-보는법---패키지-클래스-변수-메소드)
+    - [자바 공식 사용 설명서를 보는 법](#자바-공식-사용-설명서를-보는-법)
+    - [class 는 하나의 프로그램이다?](#class-는-하나의-프로그램이다)
+- [13.3 자바문서 보는법 - 클래스](#133-자바문서-보는법---클래스)
+- [13.4 자바문서 보는법 - 인스턴스](#134-자바문서-보는법---인스턴스)
+    - [PrintWriter 클래스](#printwriter-클래스)
+    - [예외상황 처리](#예외상황-처리)
+    - [인스턴스](#인스턴스)
+- [13.5 자바문서 보는법 - 상속](#135-자바문서-보는법---상속)
+    - [Inheritance](#inheritance)
+    - [하이라키(계층구조/항목나열)](#하이라키계층구조항목나열)
+- [14.1 나의 앱 만들기(myApp)](#141-나의-앱-만들기myapp)
+- [14.2 myApp - 기본 기능 구현](#142-myapp---기본-기능-구현)
+    - [Find/Replace 기능](#findreplace-기능)
+- [14.3 myApp - 변수도입](#143-myapp---변수도입)
+    - [MyApp에 변수 도입](#myapp에-변수-도입)
+- [14.4 myApp - 입력값 도입](#144-myapp---입력값-도입)
+    - [MyApp에 입력값 도입](#myapp에-입력값-도입)
+- [14.5 myApp - 오리엔테이션2](#145-myapp---오리엔테이션2)
+- [14.6 myApp - 조건문](#146-myapp---조건문)
+- [14.7 myApp - 배열](#147-myapp---배열)
+    - [결과](#결과)
+  - [public static void main(String args[])](#public-static-void-mainstring-args)
+    - [static](#static)
+    - [public](#public)
+    - [String args[]](#string-args)
+    - [void](#void)
+- [14.8 myApp - 반복문](#148-myapp---반복문)
+    - [myApp에 반복문 적용](#myapp에-반복문-적용)
+- [14.9 myApp - 메소드](#149-myapp---메소드)
+    - [1. 메소드 추출](#1-메소드-추출)
+    - [2. 전역변수 선언](#2-전역변수-선언)
+    - [3. 메소드 이용](#3-메소드-이용)
+    - [4. 입력값 삭제 (사용x)](#4-입력값-삭제-사용x)
+    - [5. 필요없는  코드 삭제 >> 메소드에 저장 outline에서 메소드 확인가능](#5-필요없는--코드-삭제--메소드에-저장-outline에서-메소드-확인가능)
+  - [완성 코드](#완성-코드)
+- [14.10 myApp - 클래스](#1410-myapp---클래스)
+  - [객체(클래스)](#객체클래스)
+    - [myApp 적용](#myapp-적용)
+- [14.11 myApp - 인스턴스](#1411-myapp---인스턴스)
+    - [상황 설정](#상황-설정)
+- [15. 수업을 마치며](#15-수업을-마치며)
+  - [생활 코딩 링크](#생활-코딩-링크)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 ---
 ---
 
@@ -158,7 +200,7 @@ Argument|	전달인자, 인자|	함수와 메서드의 입력 값(Value)
 * java -version
 * javac -version
 
-> ### [windows cmd java and the windows command prompt](https://introcs.cs.princeton.edu/java/15inout/windows-cmd.html)
+* [windows cmd java and the windows command prompt](https://introcs.cs.princeton.edu/java/15inout/windows-cmd.html)
 
 ## 환경변수 설정
 * path : 

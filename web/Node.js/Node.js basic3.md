@@ -9,20 +9,69 @@
     - App제작(Node.js)
 
 # 목차
-* chapter 23 ~ chapter 35
-    23. App-글생성UI
-    24. App-POST방식 데이터 받기
-    25. App-파일생성과 리다이렉션
-    26. App-글수정
-    27. App-글삭제
-    28. js문법-객체
-    29. App-템플릿 기능 정리
-    30. 모듈의 형식
-    31. 모듈의 활용
-    32. App-입력정보에 대한 보안
-    33. App-출력정보에 대한 보안
-    34. API와 CreateServer
-    35. 수업을 마치며
+- [Node.js basic1](#nodejs-basic1)
+- [목차](#목차)
+- [App 제작-글생성 UI 만들기](#app-제작-글생성-ui-만들기)
+    - [글쓰기 화면 만들기](#글쓰기-화면-만들기)
+- [App 제작-POST 방식으로 전송된 데이터 받기](#app-제작-post-방식으로-전송된-데이터-받기)
+    - [코드수정](#코드수정)
+    - [정리](#정리)
+- [App 제작-파일생성과 리다이렉션](#app-제작-파일생성과-리다이렉션)
+  - [데이터 디렉토리에 저장](#데이터-디렉토리에-저장)
+    - [코드](#코드)
+    - [정리](#정리-1)
+- [app 제작-글수정](#app-제작-글수정)
+  - [1. 수정링크생성](#1-수정링크생성)
+  - [2. 수정할 정보 전송.](#2-수정할-정보-전송)
+  - [3. 파일명 변경, 내용저장](#3-파일명-변경-내용저장)
+- [App 제작-글삭제](#app-제작-글삭제)
+  - [1. 글삭제 기능 완성](#1-글삭제-기능-완성)
+  - [301vs302](#301vs302)
+- [Javascript문법5-객체](#javascript문법5-객체)
+  - [객체](#객체)
+    - [정리](#정리-2)
+  - [배열과 객체의 반복.](#배열과-객체의-반복)
+  - [OOP](#oop)
+  - [객체 마무리](#객체-마무리)
+    - [결론](#결론)
+    - [추가](#추가)
+- [App제작-템플릿 기능 정리](#app제작-템플릿-기능-정리)
+    - [템플릿 객체 생성](#템플릿-객체-생성)
+  - [리펙토링](#리펙토링)
+- [모듈의 형식](#모듈의-형식)
+  - [정리정돈 툴 - 모듈](#정리정돈-툴---모듈)
+    - [코드 설명 1](#코드-설명-1)
+    - [코드 설명 2](#코드-설명-2)
+    - [코드 설명 3](#코드-설명-3)
+- [모듈의 활용](#모듈의-활용)
+  - [모듈 적용(main.js)](#모듈-적용mainjs)
+- [App제작-입력정보에 대한 보안](#app제작-입력정보에-대한-보안)
+  - [보안감수성-입력정보](#보안감수성-입력정보)
+    - [Cmd에서 즉석 실행](#cmd에서-즉석-실행)
+- [App제작-출력정보에 대한 보안](#app제작-출력정보에-대한-보안)
+  - [보안감수성-출력정보](#보안감수성-출력정보)
+    - [방법 2가지](#방법-2가지)
+    - [적용](#적용)
+    - [sanitize-html과 의존성 설명](#sanitize-html과-의존성-설명)
+    - [Sanitize-html 모듈 require하기](#sanitize-html-모듈-require하기)
+    - [상세 페이지를 보는 코드에서 title과 dsecription을 sanitized하기](#상세-페이지를-보는-코드에서-title과-dsecription을-sanitized하기)
+- [API와 CreateServer](#api와-createserver)
+  - [API](#api)
+    - [fs.readFile함수](#fsreadfile함수)
+    - [함수와 인터페이스](#함수와-인터페이스)
+    - [다시 API](#다시-api)
+  - [Node.js documentation](#nodejs-documentation)
+    - [http.createServer(options)](#httpcreateserveroptions)
+    - [createServer (리턴값, 반환값)](#createserver-리턴값-반환값)
+    - [server.listen()](#serverlisten)
+    - [파서블 시그니쳐.](#파서블-시그니쳐)
+- [수업을 마치며](#수업을-마치며)
+  - [배운것](#배운것)
+  - [도전해볼만한 주제:](#도전해볼만한-주제)
+  - [마치며](#마치며)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 # App 제작-글생성 UI 만들기

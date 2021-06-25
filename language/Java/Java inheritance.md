@@ -9,13 +9,21 @@
   - 생성자
 
 # 목차
-* chapter 1 ~ chapter 6
-    1. 소개
-    2. 기능의 개선과 발전
-    3. Overriding vs Overloading
-    4. this & super
-    5. 상속과 생성자
-    6. 마무리
+
+- [Java inheritance](#java-inheritance)
+- [목차](#목차)
+- [소개](#소개)
+	- [상속](#상속)
+- [기능의 개선과 발전](#기능의-개선과-발전)
+	- [Overriding하면 상속받은 부모 클래스의 기능을 재정의(덮어쓰기)할 수 있다.](#overriding하면-상속받은-부모-클래스의-기능을-재정의덮어쓰기할-수-있다)
+- [Overriding vs Overloading](#overriding-vs-overloading)
+- [this & super](#this--super)
+- [상속과 생성자](#상속과-생성자)
+- [마무리](#마무리)
+	- [추가학습주제](#추가학습주제)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # 소개
 

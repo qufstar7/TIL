@@ -10,16 +10,45 @@
       - 네트워크
 
 # 목차
-* chapter 1 ~ chapter 8
-    1. about Home server
-    2. 공유기
-    3. NAT
-    4. IP 주소 확인
-    5. port
-    6. port forwarding
-    7. Dynamic & Static IP address
-    8. DHCP
-    9. 추가 학습 주제
+- [Home server](#home-server)
+- [목차](#목차)
+- [About Home server](#about-home-server)
+  - [인터넷 통신규칙 - IP adress](#인터넷-통신규칙---ip-adress)
+    - [IPv4](#ipv4)
+    - [IPv6](#ipv6)
+    - [IPv4, IPv6의 상황](#ipv4-ipv6의-상황)
+  - [공유기가 연결된 컴퓨터를 웹서버로 운영](#공유기가-연결된-컴퓨터를-웹서버로-운영)
+    - [알아야할 개념](#알아야할-개념)
+- [공유기](#공유기)
+  - [router(라우터)](#router라우터)
+    - [공유기 연결 과정](#공유기-연결-과정)
+    - [ipv4 사설ip의 범위](#ipv4-사설ip의-범위)
+- [NAT](#nat)
+  - [Network Address Translation](#network-address-translation)
+    - [요청 응답 과정 (2)](#요청-응답-과정-2)
+    - [단점 및 추후상황](#단점-및-추후상황)
+- [IP 주소 알아내기](#ip-주소-알아내기)
+  - [IP 주소 알아내기](#ip-주소-알아내기-1)
+  - [public ip 확인 방법](#public-ip-확인-방법)
+- [port](#port)
+  - [port](#port-1)
+    - [전송 계층 프로토콜](#전송-계층-프로토콜)
+    - [포트의 사용(표기)](#포트의-사용표기)
+    - [일반 포트 번호](#일반-포트-번호)
+    - [응답하는 device](#응답하는-device)
+    - [This is represented in a syntax diagram as:](#this-is-represented-in-a-syntax-diagram-as)
+- [port forwarding](#port-forwarding)
+  - [포트포워딩](#포트포워딩)
+- [Dynamic & Static IP address](#dynamic--static-ip-address)
+- [DHCP](#dhcp)
+  - [Dynamic Host Configuration Protocol](#dynamic-host-configuration-protocol)
+    - [DHCP client - host communication](#dhcp-client---host-communication)
+  - [공유기 관리자](#공유기-관리자)
+- [추가 학습 주제](#추가-학습-주제)
+  - [추가적으로 공부할 만한 지식](#추가적으로-공부할-만한-지식)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 # About Home server

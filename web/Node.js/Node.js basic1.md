@@ -9,19 +9,49 @@
     - App제작 - 동적 웹페이지, 파일을 이용한 본문 구현
 
 # 목차
-* chapter 1 ~ chapter 12
-    1. Node.js 소개
-    2. 목적
-    3. 설치
-    4. 웹서버 만들기
-    5. js문법-data type
-    6. URI
-    7. URI 사용
-    8. APP-동적인 웹
-    9. Node.js에서 파일읽기
-    10. App-파일 이용해 본문 구현
-    11. js문법-블리언 등
-    12. 콘솔에서의 입력값
+- [Node.js basic1](#nodejs-basic1)
+- [목차](#목차)
+- [Node.js 소개](#nodejs-소개)
+  - [Node.js](#nodejs)
+- [목적](#목적)
+- [설치](#설치)
+  - [방법](#방법)
+  - [경로](#경로)
+    - [윈도우 10에서 다른 드라이브(d:) 로 이동하는 방법](#윈도우-10에서-다른-드라이브d-로-이동하는-방법)
+- [Node.js로 웹서버 만들기](#nodejs로-웹서버-만들기)
+  - [html소스 가져오기](#html소스-가져오기)
+  - [Main.js 파일 만들기](#mainjs-파일-만들기)
+  - [Cmd에서 node.js를 이용해 웹페이지 실행](#cmd에서-nodejs를-이용해-웹페이지-실행)
+  - [Node.js의 장점](#nodejs의-장점)
+- [Javascript 문법-data type](#javascript-문법-data-type)
+  - [숫자와 연산자 - 이항연산자](#숫자와-연산자---이항연산자)
+- [Url의 이해](#url의-이해)
+  - [Url 개념알기](#url-개념알기)
+- [Url을 통해서 입력된 값 사용하기](#url을-통해서-입력된-값-사용하기)
+  - [웹 애플리케이션 실습](#웹-애플리케이션-실습)
+    - [쿼리스트링에 따라서 다른 정보 보여주기](#쿼리스트링에-따라서-다른-정보-보여주기)
+    - [console](#console)
+- [App제작-동적인 웹페이지 만들기](#app제작-동적인-웹페이지-만들기)
+- [Node.js 에서 파일 읽기 기능](#nodejs-에서-파일-읽기-기능)
+  - [정보를 다루는 핵심적인 처리과정 4가지](#정보를-다루는-핵심적인-처리과정-4가지)
+    - [읽기](#읽기)
+    - [Cmd 에서..](#cmd-에서)
+- [App제작-파일을 이용해 본문 구현](#app제작-파일을-이용해-본문-구현)
+- [Javascript 문법2-블리언 등](#javascript-문법2-블리언-등)
+  - [Boolean datatype](#boolean-datatype)
+  - [Comparison Operator](#comparison-operator)
+  - [conditional statement](#conditional-statement)
+  - [Flow control statement](#flow-control-statement)
+- [콘솔에서의 입력값](#콘솔에서의-입력값)
+  - [program's I/O](#programs-io)
+  - [콘솔 실습](#콘솔-실습)
+    - [코드 해석](#코드-해석)
+    - [코드입력](#코드입력)
+    - [콘솔실행](#콘솔실행)
+  - [결론 및 정리](#결론-및-정리)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 # Node.js 소개

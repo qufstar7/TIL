@@ -9,21 +9,66 @@
     - github page, tistory와 같은 서비스에 도메인 붙이는 방법
     
 # 목차
-* chapter 1 ~ chapter n
-    1. DNS
-    2. ip주소와 hosts 1
-    3. ip주소와 hosts 2
-    4. 도메인 이름과 보안
-    5. DNS의 태풍
-    6. DNS의 원리
-    7. public DNS의 사용
-    8. 도메인 이름의 구조
-    9. 도메인 이름 동록 과정과 원리
-    10. nslookup
-    11. 나의 도메인 이름 장만하기
-    12. DNS record & CNAME
-    13. githup pages에 도메인 연결하기
-    14. 추가 학습 주제
+- [DomainNameSystem](#domainnamesystem)
+- [목차](#목차)
+- [수업소개](#수업소개)
+  - [host](#host)
+  - [ip address](#ip-address)
+  - [DNS의 시작](#dns의-시작)
+    - [DNS 서버](#dns-서버)
+- [IP주소와 hosts 1](#ip주소와-hosts-1)
+  - [ip란](#ip란)
+  - [host란](#host란)
+    - [**hosts file**](#hosts-file)
+- [IP주소와 hosts 2](#ip주소와-hosts-2)
+  - [Location in the file system](#location-in-the-file-system)
+  - [hosts 실습](#hosts-실습)
+- [도메인 이름과 보안](#도메인-이름과-보안)
+  - [보안감수성](#보안감수성)
+- [DNS의 태동](#dns의-태동)
+  - [hosts파일에 대한 고민](#hosts파일에-대한-고민)
+  - [스탠포드 리서치 기구가 관리하는 방식](#스탠포드-리서치-기구가-관리하는-방식)
+  - [DNS의 태동](#dns의-태동-1)
+- [DNS의 원리](#dns의-원리)
+- [public DNS의 사용](#public-dns의-사용)
+  - [DNS서버 사용 매커니즘](#dns서버-사용-매커니즘)
+    - [DNS서버 설정](#dns서버-설정)
+- [도메인 이름의 구조](#도메인-이름의-구조)
+  - [DNS server의 역할](#dns-server의-역할)
+    - [DNS 서버 이모저모](#dns-서버-이모저모)
+    - [DNS 서버 과정](#dns-서버-과정)
+- [도메인 이름 등록 과정과 원리](#도메인-이름-등록-과정과-원리)
+  - [DNS register](#dns-register)
+  - [ICANN 비영리단체](#icann-비영리단체)
+    - [Root name server](#root-name-server)
+    - [예제](#예제)
+  - [registry](#registry)
+    - [예제](#예제-1)
+  - [Registrar(등록대행자)](#registrar등록대행자)
+  - [DNS record](#dns-record)
+- [nslookup](#nslookup)
+  - [정보 수집 도구](#정보-수집-도구)
+  - [nslookup](#nslookup-1)
+    - [nslookup example.com](#nslookup-examplecom)
+    - [nslookup -type=ns example.com](#nslookup--typens-examplecom)
+    - [nslookup example.com a.iana-servers.net](#nslookup-examplecom-aiana-serversnet)
+    - [비교](#비교)
+- [나의 도메인 이름 장만하기](#나의-도메인-이름-장만하기)
+  - [freenom.com](#freenomcom)
+- [DNS record & CNAME](#dns-record--cname)
+    - [dns 레코드 타입 목록 -](#dns-레코드-타입-목록--)
+    - [레코드 설명](#레코드-설명)
+- [Github pages에 도메인 연결하기](#github-pages에-도메인-연결하기)
+  - [깃헙 페이지 설정](#깃헙-페이지-설정)
+- [추가 학습 주제](#추가-학습-주제)
+  - [공부해 볼만한 주제](#공부해-볼만한-주제)
+    - [BIND 9](#bind-9)
+    - [DNS 서비스](#dns-서비스)
+    - [Dynamic DNS (**DDNS**)](#dynamic-dns-ddns)
+    - [**HTTPS**](#https)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # 수업소개
 

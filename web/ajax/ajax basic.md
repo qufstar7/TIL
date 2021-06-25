@@ -5,19 +5,61 @@
 
 
 # 목차
-* chapter 1 ~ chapter 12   
-    1. 수업소개
-    2. 수업의 목적
-    3. 실습환경 준비
-    4. 동적으로 컨텐츠 변경하기
-    5. fetch API
-    6. Ajax의 적용
-    7. 리팩토링 함수화
-    8. 초기 페이지
-    9. 글목록 1
-    10. 글목록 2 
-    11. fetch API polyfill
-    12. 수업을 마치며
+- [Ajax basic](#ajax-basic)
+- [목차](#목차)
+- [1. 수업소개](#1-수업소개)
+    - [ajax의 등장배경](#ajax의-등장배경)
+    - [ajax의 예시 및 작동방식](#ajax의-예시-및-작동방식)
+    - [ajax의 역사](#ajax의-역사)
+    - [ajax의 역할](#ajax의-역할)
+- [2. 수업의 목적](#2-수업의-목적)
+    - [ajax의 효율성](#ajax의-효율성)
+- [3. 실습환경 준비](#3-실습환경-준비)
+    - [javascript 코드 다운로드](#javascript-코드-다운로드)
+- [4. 동적으로 컨텐츠 변경하기](#4-동적으로-컨텐츠-변경하기)
+    - [실습 목표](#실습-목표)
+    - [코드](#코드)
+- [5. fetch API](#5-fetch-api)
+  - [사용법](#사용법)
+    - [fetch.html](#fetchhtml)
+    - [fetch.html 에서 ajax 작동(사용)과정](#fetchhtml-에서-ajax-작동사용과정)
+    - [tip](#tip)
+  - [요청과 응답](#요청과-응답)
+    - [ajax의 a 비동기](#ajax의-a-비동기)
+    - [코드설명](#코드설명)
+  - [response 객체](#response-객체)
+  - [코드설명](#코드설명-1)
+    - [console 출력값](#console-출력값)
+  - [활용 예제](#활용-예제)
+    - [코드설명](#코드설명-2)
+- [6. ajax의 적용](#6-ajax의-적용)
+  - [fetch API 써먹어보기](#fetch-api-써먹어보기)
+- [7. 리팩토링 함수화](#7-리팩토링-함수화)
+    - [개선 및 발전](#개선-및-발전)
+- [8. 초기 페이지](#8-초기-페이지)
+  - [특정문단으로 접속](#특정문단으로-접속)
+    - [적용](#적용)
+  - [해쉬 값으로 시작페이지 세팅](#해쉬-값으로-시작페이지-세팅)
+  - [적용 실습 (index.html)](#적용-실습-indexhtml)
+  - [주소 공유시 똑같은 화면 보여주기](#주소-공유시-똑같은-화면-보여주기)
+    - [문제해결](#문제해결)
+  - [ajax단점 : 검색엔진 최적화가 잘 안됨.](#ajax단점--검색엔진-최적화가-잘-안됨)
+- [9. 글목록 1](#9-글목록-1)
+  - [```list code``` 분리](#list-code-분리)
+    - [적용법](#적용법)
+  - [nav, #nav](#nav-nav)
+- [10. 글목록 2](#10-글목록-2)
+    - [list 파일의 중복을 없애보자.](#list-파일의-중복을-없애보자)
+    - [배열을 이용하자](#배열을-이용하자)
+- [11. fetch API polyfill](#11-fetch-api-polyfill)
+  - [fetch API polyfill](#fetch-api-polyfill)
+  - [polyfill 적용](#polyfill-적용)
+- [12. 수업을 마치며](#12-수업을-마치며)
+  - [정리](#정리)
+  - [공부할 만한 주제](#공부할-만한-주제)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
    
 
 # 1. 수업소개

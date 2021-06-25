@@ -1,3 +1,14 @@
+- [The secret life of programming](#the-secret-life-of-programming)
+  - [**1. 언어란 무엇인가**](#1-언어란-무엇인가)
+  - [**2. 문자 언어**](#2-문자-언어)
+  - [**3. 비트**](#3-비트)
+  - [**4. 논리 연산**](#4-논리-연산)
+  - [4-1. 불리언 대수](#4-1-불리언-대수)
+  - [4-2. 진리표(truth table)](#4-2-진리표truth-table)
+  - [4-3. 드모르간의 법칙](#4-3-드모르간의-법칙)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 # The secret life of programming 
  **Chapter 1. Language system inside the computer (2)**
 - What language does the computer use

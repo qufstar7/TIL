@@ -1,3 +1,27 @@
+- [The secret life of programming](#the-secret-life-of-programming)
+  * [**1. Memory**](#--1-memory--)
+  * [**2. Input and output**](#--2-input-and-output--)
+  * [**3. Central Processing Unit**](#--3-central-processing-unit--)
+    + [**3-1. Arithmetic logic device**](#--3-1-arithmetic-logic-device--)
+    + [**3-2. Shift**](#--3-2-shift--)
+    + [**3-3. Execution unit**](#--3-3-execution-unit--)
+  * [**4. Instruction set**](#--4-instruction-set--)
+    + [**4-1. Instruction**](#--4-1-instruction--)
+    + [**4-2. Addressing mode**](#--4-2-addressing-mode--)
+    + [**4-3. Conditional code Instruction**](#--4-3-conditional-code-instruction--)
+    + [**4-4. Branch Instruction**](#--4-4-branch-instruction--)
+    + [**4-5. Final Instruction set configuration**](#--4-5-final-instruction-set-configuration--)
+  * [**5. Final Design**](#--5-final-design--)
+    + [**5-1. Instruction register**](#--5-1-instruction-register--)
+    + [**5-2. Data path and control signals**](#--5-2-data-path-and-control-signals--)
+    + [**5-3. Data flow control**](#--5-3-data-flow-control--)
+  * [**6. RISC and CISC Instruction Set**](#--6-risc-and-cisc-instruction-set--)
+  * [**7. GPU**](#--7-gpu--)
+  * [**chapter 4 정리**](#--chapter-4-----)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 # The secret life of programming 
  **Chapter 4. Internal structure of the computer**
 

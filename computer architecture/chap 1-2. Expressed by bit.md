@@ -1,3 +1,17 @@
+- [The secret life of programming](#the-secret-life-of-programming)
+  - [**5. 정수를 비트로 표현하는 방법**](#5-정수를-비트로-표현하는-방법)
+  - [**6. 실수를 표현하는 방법**](#6-실수를-표현하는-방법)
+  - [**7. 2진 코드화한 10진수 시스템**](#7-2진-코드화한-10진수-시스템)
+  - [**8. 2진수를 다루는 쉬운 방법**](#8-2진수를-다루는-쉬운-방법)
+  - [**9. 비트그룹의 이름**](#9-비트그룹의-이름)
+  - [**10. 텍스트 표현**](#10-텍스트-표현)
+  - [**11. 문자를 사용한 수 표현**](#11-문자를-사용한-수-표현)
+  - [**12. 색을 표현하는 방법**](#12-색을-표현하는-방법)
+  - [**chapter 1 정리**](#chapter-1-정리)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 # The secret life of programming 
  **Chapter 1. Language system inside the computer (2)**
 - What language does the computer use

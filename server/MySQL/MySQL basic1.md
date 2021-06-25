@@ -9,20 +9,67 @@
     - CRUD
   
 # 목차
-* chapter 1 ~ chapter 12
-    1. MySQL 소개
-    1. 데이터베이스의 목적
-    2. MySQL 설치
-    3. MySQL의 구조
-    4. 서버접속
-    5. MySQL 서버접속
-    6. 스키마의 사용
-    7. SQL과 테이블의 구조
-    8. 테이블의 생성
-    9. CRUD
-    10. INSERT
-    11. SELECT
-    12. UPDATE   
+- [MySQL basic1](#mysql-basic1)
+- [목차](#목차)
+- [1. MySQL 소개](#1-mysql-소개)
+    - [File](#file)
+    - [Database](#database)
+    - [Relational Database](#relational-database)
+  - [MySQL](#mysql)
+    - [웹에게 MySQL이란](#웹에게-mysql이란)
+- [데이터베이스의 목적](#데이터베이스의-목적)
+  - [데이터베이스가 무엇이고 왜 사용하는가](#데이터베이스가-무엇이고-왜-사용하는가)
+  - [스트페드시트와 데이터베이스의 차이점과 공통점](#스트페드시트와-데이터베이스의-차이점과-공통점)
+    - [공통점](#공통점)
+    - [차이점](#차이점)
+    - [웹을 통해서 데이터베이스를 화면에 표시해보자.](#웹을-통해서-데이터베이스를-화면에-표시해보자)
+- [MySQL 설치](#mysql-설치)
+  - [검색](#검색)
+    - [MySQL community edition](#mysql-community-edition)
+  - [Codeanywhere.com](#codeanywherecom)
+  - [bitnami](#bitnami)
+    - [bitnami wamp](#bitnami-wamp)
+  - [설치방법 선택](#설치방법-선택)
+  - [설치 후 실행 실습](#설치-후-실행-실습)
+    - [cmd](#cmd)
+- [MySQL의 구조](#mysql의-구조)
+  - [schema](#schema)
+- [서버접속](#서버접속)
+- [스키마의 사용](#스키마의-사용)
+  - [mysql 스키마 실습](#mysql-스키마-실습)
+- [SQL과 테이블의 구조](#sql과-테이블의-구조)
+  - [SQL 언어](#sql-언어)
+  - [테이블의 구조](#테이블의-구조)
+- [테이블의 생성](#테이블의-생성)
+  - [MySQL에서 표 생성 및 데이터 관리](#mysql에서-표-생성-및-데이터-관리)
+  - [SQL cheat sheet](#sql-cheat-sheet)
+    - [SQL cheat sheet 참고](#sql-cheat-sheet-참고)
+  - [엑셀과 database와의 차이.](#엑셀과-database와의-차이)
+    - [MySQL datatypes 참고](#mysql-datatypes-참고)
+    - [Terminal](#terminal)
+    - [ERROR1820](#error1820)
+- [CRUD](#crud)
+  - [create, read > update, delete](#create-read--update-delete)
+  - [사용](#사용)
+- [INSERT](#insert)
+    - [검색)](#검색-1)
+    - [cmd](#cmd-1)
+- [SELECT](#select)
+  - [READ](#read)
+    - [**프로젝션**(expression ; expr)](#프로젝션expression--expr)
+  - [검색) mysql select syntax](#검색-mysql-select-syntax)
+  - [select 실습](#select-실습)
+  - [select 정리](#select-정리)
+- [UPDATE](#update)
+    - [cmd](#cmd-2)
+  - [**where문의 중요성**](#where문의-중요성)
+    - [테이블 컬럼명 수정하기](#테이블-컬럼명-수정하기)
+- [DELETE](#delete)
+    - [CMD](#cmd-3)
+  - [where문의 중요성](#where문의-중요성-1)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # 1. MySQL 소개
 

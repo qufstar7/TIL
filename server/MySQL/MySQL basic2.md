@@ -10,15 +10,44 @@
   - 추가학습주제
   
 # 목차
-* chapter 13 ~ chapter 20
-    13. 수업의 정상
-    14. 관계형데이터베이스의 필요성
-    15. 테이블 분리하기
-    16. JOIN
-    17. 인터넷과 데이터베이스
-    18. MySQL Client
-    19. MySQL Workbench
-    20. 수업을 마치며
+- [MySQL basic2](#mysql-basic2)
+- [목차](#목차)
+- [수업의 정상](#수업의-정상)
+  - [중간 점검](#중간-점검)
+  - [앞으로의 내용](#앞으로의-내용)
+- [관계형데이터베이스의 필요성](#관계형데이터베이스의-필요성)
+  - [문제 상황 설정](#문제-상황-설정)
+    - [해결](#해결)
+    - [JOIN](#join)
+- [테이블 분리하기](#테이블-분리하기)
+    - [cmd](#cmd)
+- [JOIN](#join-1)
+  - [조인 JOIN 기능](#조인-join-기능)
+    - [결합고리 author_id와 id. 둘을 연결-결합해보자.](#결합고리-author_id와-id-둘을-연결-결합해보자)
+    - [CMD](#cmd-1)
+  - [중복 제거](#중복-제거)
+  - [테이블의 분리의 의미](#테이블의-분리의-의미)
+- [인터넷과 데이터베이스](#인터넷과-데이터베이스)
+  - [관계](#관계)
+    - [database server에서 server의 의미는?](#database-server에서-server의-의미는)
+    - [CMD](#cmd-2)
+    - [MySQL monitor와 MySQL workbench](#mysql-monitor와-mysql-workbench)
+- [MySQL Clinet](#mysql-clinet)
+    - [검색)ᅟwhat is the best MySQL client](#검색ᅟwhat-is-the-best-mysql-client)
+- [MySQL Workbench](#mysql-workbench)
+  - [MySQL workbench 다운받고 실습](#mysql-workbench-다운받고-실습)
+- [수업을 마치며](#수업을-마치며)
+  - [추가학습주제](#추가학습주제)
+    - [1. SQL](#1-sql)
+    - [2. SELECLT문](#2-seleclt문)
+    - [3. index](#3-index)
+    - [4. modeling](#4-modeling)
+    - [5. backup](#5-backup)
+    - [7. cloud](#7-cloud)
+    - [8. programming](#8-programming)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # 수업의 정상
 

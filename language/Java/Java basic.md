@@ -1,20 +1,29 @@
 >> 생활코딩 java1을 학습, 정리한 내용입니다. (https://opentutorials.org/course/3930)
 
 # Java basic 1
-* 1강 ~ 5강
-1. 수업 소개
-   * 장단점
-   * 개발 언어 순위
-2. 실습 환경(java 설치)   
-3. IDE 설치(eclipse 설치)
-   * IDE 종류
-4. 실행
-   1. A/S
-   2. java의 동작 원리
-5. Hello Java World 
-   1. 데스크톱 애플리케이션
-   2. 사물을 자바로 제어하기
-   3. 안드로이드 애플리케이션 만들기
+- [Java basic 1](#java-basic-1)
+	- [1. what is Java?](#1-what-is-java)
+		- [1.1 장점](#11-장점)
+		- [1.2 단점](#12-단점)
+		- [21년 프로그래밍 언어 순위](#21년-프로그래밍-언어-순위)
+	- [2.1 온라인 실습환경](#21-온라인-실습환경)
+	- [practice java](#practice-java)
+		- [practice 1)](#practice-1)
+		- [practice 2)](#practice-2)
+	- [2.2 자바 설치](#22-자바-설치)
+	- [3. IDE 설치 - eclipse](#3-ide-설치---eclipse)
+		- [IDE 비교](#ide-비교)
+	- [4.1 실행](#41-실행)
+	- [4.2 A/S](#42-as)
+	- [4.3 자바 동작 원리](#43-자바-동작-원리)
+- [5. Hello Java World](#5-hello-java-world)
+	- [5.a 데스크톱 애플리케이션 만들기](#5a-데스크톱-애플리케이션-만들기)
+	- [5.b 사물을 java로 제어하기](#5b-사물을-java로-제어하기)
+	- [5.c 안드로이드 애플리케이션 만들기](#5c-안드로이드-애플리케이션-만들기)
+	- [생활 코딩 링크](#생활-코딩-링크)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 ---
 ---
 

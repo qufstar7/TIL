@@ -21,17 +21,63 @@
     - p4Merge를 이용한 해결
 
 # 목차
-* chapter 1 ~ chapter n
-    1. 소개
-    2. 실습 준비
-    3. branch의 기본사용법
-    4. 병합
-    5. 서로 다른 파일 병합
-    6. 같은 파일, 다른 부분 병합
-    7. 같은 파일, 같은 부분 병합
-    8. 3 way merge
-    9. 외부도구를 이용한 병합
-    10. 정리, 심화학습주제
+- [GIT CLI - branch & conflict](#git-cli---branch--conflict)
+- [목차](#목차)
+- [수업 소개](#수업-소개)
+  - [branch 가지](#branch-가지)
+    - [예시 상황 설정](#예시-상황-설정)
+  - [Branch](#branch)
+  - [conflict 충돌](#conflict-충돌)
+    - [학습목표](#학습목표)
+- [실습 준비](#실습-준비)
+- [branch의 기본사용법](#branch의-기본사용법)
+  - [브랜치 생성 및 전환, 파일 작업 실습](#브랜치-생성-및-전환-파일-작업-실습)
+    - [실습 전](#실습-전)
+    - [실습 1 . 브랜치 생성](#실습-1--브랜치-생성)
+    - [실습 2 . 브랜치 전환](#실습-2--브랜치-전환)
+    - [실습 3 . 파일작업](#실습-3--파일작업)
+    - [실습 4 . 브랜치 구조 및 내용 확인](#실습-4--브랜치-구조-및-내용-확인)
+- [병합 (merge)](#병합-merge)
+- [서로 다른 파일 병합](#서로-다른-파일-병합)
+    - [합병 방법](#합병-방법)
+    - [합병 되돌아 오는 방법](#합병-되돌아-오는-방법)
+- [같은 파일, 다른 부분 병합](#같은-파일-다른-부분-병합)
+  - [**work.txt of branches**](#worktxt-of-branches)
+    - [로그 (log --all --graph --oneline)](#로그-log---all---graph---oneline)
+- [같은 파일, 같은 부분 병합](#같은-파일-같은-부분-병합)
+    - [work.txt(conflict)](#worktxtconflict)
+    - [work.txt(수정)](#worktxt수정)
+    - [commit 완료](#commit-완료)
+    - [로그](#로그)
+    - [work.txt(커밋 후)](#worktxt커밋-후)
+- [3 way merge](#3-way-merge)
+    - [예시](#예시)
+  - [2 way merge](#2-way-merge)
+  - [3 way merge](#3-way-merge-1)
+- [외부도구를 이용한 병합](#외부도구를-이용한-병합)
+  - [1. 실습 준비 -](#1-실습-준비--)
+  - [2. merge → conflict 상황](#2-merge--conflict-상황)
+  - [3. p4Merge 설치 및 설정](#3-p4merge-설치-및-설정)
+    - [참고](#참고)
+    - [p4Merge 프로그램 실행 화면](#p4merge-프로그램-실행-화면)
+    - [참고](#참고-1)
+    - [고려할만한 추가 설정](#고려할만한-추가-설정)
+  - [4. conflict 해결](#4-conflict-해결)
+    - [5. p4Merge에서 파일 수정](#5-p4merge에서-파일-수정)
+    - [5. 상태확인](#5-상태확인)
+    - [work.txt.orig](#worktxtorig)
+    - [work.txt](#worktxt)
+  - [6. commit](#6-commit)
+    - [3 way merge compare tool](#3-way-merge-compare-tool)
+- [수업을 마치며](#수업을-마치며)
+    - [검색어](#검색어)
+- [부록 1.1 HEAD branch commit](#부록-11-head-branch-commit)
+    - [HEAD가 가르키는 방식 - 순서대로 cmd, TortoiseGit(토토이즈깃), sourcetree](#head가-가르키는-방식---순서대로-cmd-tortoisegit토토이즈깃-sourcetree)
+- [부록 1.2 checkout vs reset](#부록-12-checkout-vs-reset)
+    - [checkout은 주로 branch를 가르키고 reset은 (특정 브랜치인 상태에서) version을 가르킨다.](#checkout은-주로-branch를-가르키고-reset은-특정-브랜치인-상태에서-version을-가르킨다)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 # 수업 소개

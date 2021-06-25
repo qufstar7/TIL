@@ -12,16 +12,84 @@
     - 활용
 
 # 목차
-* chapter 1 ~ chapter 9
-    1. 소개
-    2. 이미 익숙한 메소드
-    3. 메소드의 기본형식
-    4. 메소드의 입력
-    5. 메소드의 출력
-    6. 메소드의 활용
-    7. 정리
-    8. 부록 - access level modifiers
-    9. 부록 - static
+- [Java method](#java-method)
+- [목차](#목차)
+- [소개](#소개)
+	- [함수와 메소드](#함수와-메소드)
+- [이미 익숙한 메소드](#이미-익숙한-메소드)
+		- [FirstMethod](#firstmethod)
+- [메소드의 기본형식](#메소드의-기본형식)
+		- [WhyMethod-1](#whymethod-1)
+		- [WhyMethod-2](#whymethod-2)
+	- [리팩토링](#리팩토링)
+		- [WhyMethod-3](#whymethod-3)
+	- [참고](#참고)
+		- [접근제한자(4)](#접근제한자4)
+- [메소드의 입력](#메소드의-입력)
+	- [개요](#개요)
+		- [메소드통합](#메소드통합)
+		- [WhyMethod-4](#whymethod-4)
+		- [위 코드에서 B를 출력하고 싶으면?](#위-코드에서-b를-출력하고-싶으면)
+		- [WhyMethod-5](#whymethod-5)
+		- [입력값에 따라 출력값이 다르게 (메소드 정리)](#입력값에-따라-출력값이-다르게-메소드-정리)
+		- [WhyMethod-6](#whymethod-6)
+		- [만약 "-"이런 구분자를 바꾸고 싶다면?](#만약--이런-구분자를-바꾸고-싶다면)
+		- [WhyMethod-7](#whymethod-7)
+		- [출력값](#출력값)
+	- [정리](#정리)
+	- [추가학습](#추가학습)
+		- [args 입력 값을 넣는 방법.](#args-입력-값을-넣는-방법)
+		- [debugger](#debugger)
+	- [parameter(매개 변수)](#parameter매개-변수)
+	- [argument(인자)](#argument인자)
+- [메소드의 출력](#메소드의-출력)
+	- [개요](#개요-1)
+	- [메소드의 출력(output)](#메소드의-출력output)
+		- [return값이란 무엇인가](#return값이란-무엇인가)
+		- [함수(메소드)란 무엇인가](#함수메소드란-무엇인가)
+		- [실습](#실습)
+		- [WhyMethod-8](#whymethod-8)
+	- [중간 정리](#중간-정리)
+	- [리턴값을 가진 메소드로 정리하기](#리턴값을-가진-메소드로-정리하기)
+	- [자바에서 메소드의 output?](#자바에서-메소드의-output)
+	- [WhyMethod 클래스에 리턴값을 이용한 메소드 활용](#whymethod-클래스에-리턴값을-이용한-메소드-활용)
+		- [WhyMethod-9](#whymethod-9)
+		- [twoTimes를 main에 적용](#twotimes를-main에-적용)
+		- [twoTimes 메소드를 이용해 writeFile기능을 사용.](#twotimes-메소드를-이용해-writefile기능을-사용)
+		- [결과](#결과)
+	- [전체 코드](#전체-코드)
+		- [WhyMethod-10](#whymethod-10)
+	- [정리](#정리-1)
+	- [참고](#참고-1)
+		- [**Class FileWriter**](#class-filewriter)
+		- [**Return문**](#return문)
+- [메소드의 활용](#메소드의-활용)
+	- [개요](#개요-2)
+		- [문제 상황 가정 - 1억줄의 코드, 오랜만에 다시 코드 확인](#문제-상황-가정---1억줄의-코드-오랜만에-다시-코드-확인)
+	- [정리정돈이 필요하다.](#정리정돈이-필요하다)
+		- [접근제한자](#접근제한자)
+		- [정적 메소드](#정적-메소드)
+- [정리](#정리-2)
+	- [메소드](#메소드)
+	- [클래스](#클래스)
+		- [클래스와 메소드](#클래스와-메소드)
+		- [다음 단계 : 객체지향](#다음-단계--객체지향)
+- [부록 - access level modifiers](#부록---access-level-modifiers)
+	- [public](#public)
+		- [접근제한자 : access level modifiers](#접근제한자--access-level-modifiers)
+		- [메소드 클래스 접근제한자](#메소드-클래스-접근제한자)
+		- [접근제한자 복습](#접근제한자-복습)
+- [부록 - static](#부록---static)
+	- [static , no static](#static--no-static)
+		- [Print-1](#print-1)
+		- [Print-2](#print-2)
+		- [메소드가 인스턴스의 소속일 때는 `static`을 빼줘야 한다.](#메소드가-인스턴스의-소속일-때는-static을-빼줘야-한다)
+		- [메소드가 클래스의 소속일 때는 `static`을 넣어줘야한다.](#메소드가-클래스의-소속일-때는-static을-넣어줘야한다)
+		- [Print-3](#print-3)
+	- [부록 - static 요약](#부록---static-요약)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # 소개
 ## 함수와 메소드
