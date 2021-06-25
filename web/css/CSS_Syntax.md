@@ -10,7 +10,6 @@
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
-
 >> based on W3Cschool - CSS(https://www.w3schools.com/css/default.asp), MDN Web Docs - CSS(https://developer.mozilla.org/ko/docs/Web/CSS)
 
 # CSS_Syntax.md
