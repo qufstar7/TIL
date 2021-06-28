@@ -1,0 +1,392 @@
+>> programmers 파이썬 입문 강의를 학습, 정리한 내용입니다 (https://programmers.co.kr/learn/courses/2)
+
+# Phthon basic3
+
+- [Phthon basic3](#phthon-basic3)
+- [if문](#if문)
+  - [실습1 `if.py`](#실습1-ifpy)
+    - [결과](#결과)
+  - [if문의 구성(4)](#if문의-구성4)
+  - [실행 흐름](#실행-흐름)
+  - [if문 요약정리](#if문-요약정리)
+    - [조건문](#조건문)
+  - [실습2 `if2.py`](#실습2-if2py)
+- [조건식](#조건식)
+  - [실습 PowerShell](#실습-powershell)
+  - [조건식 요약정리](#조건식-요약정리)
+    - [조건](#조건)
+    - [boolean연산](#boolean연산)
+    - [예시](#예시)
+- [블럭](#블럭)
+  - [실습 `ifblock.py`](#실습-ifblockpy)
+  - [블럭 요약정리](#블럭-요약정리)
+- [if else](#if-else)
+  - [else](#else)
+  - [elif](#elif)
+  - [실습 `ifelse.py`](#실습-ifelsepy)
+  - [if else 요약정리](#if-else-요약정리)
+    - [else](#else-1)
+    - [elif](#elif-1)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
+
+
+# if문
+if를 이용한 조건문 : 조건에 맞는 경우에만 실행하는 코드를 만드는 역할
+## 실습1 `if.py`
+```py
+people = 3
+apple = 20
+
+if people < apple / 5:
+    print('신나는 사과 파티! 배 터지게 먹자!') # 3<4
+
+if apple % people > 0:
+    print('사과 수가 맞지 않아! 몇 개는 쪼개 먹자!') # 3%20 > 0
+
+if people > apple:
+    print('사람이 너무 많아! 몇 명은 ...') # 3<20
+```
+### 결과
+```
+신나는 사과 파티! 배 터지게 먹자!
+사과 수가 맞지 않아! 몇 개는 쪼개 먹자!
+```
+
+## if문의 구성(4)
+1. `if`(예약어) - 조건문의 시작
+2. 조건식(논리 표현식) - 실행 여부를 결정하는 조건
+3. `:` 콜론 - 조건식 끝에 콜론 기호(:)
+4. 4칸 들여쓰기(탭키) 후 실행할 코드 - 조건식이 참이면 실행할 코드
+## 실행 흐름
+1. 조건을 보고
+2. 참이면 4칸 들여쓴 코드를 실행
+3. 거짓이면 실행하지 않고 넘어간다.
+
+## if문 요약정리
+### 조건문
+* 특정 조건에 따라 다른 동작을 할 수 있도록 해 주는 구문
+    ```py
+    if people > apple:
+        print('사람이 너무 많아! 몇 명은 못먹겠네')   
+    ```
+* 구조
+  1. if 예약어 : 조건문의 시작을 알림
+  2. 조건: people > apple와 같이 참/거짓을 판단할 수 있는 조건
+  3. : 조건이 끝났다는걸 표현한하는 명령
+  4. 실행하고자 하는 코드. 코드는 탭키를 이용해서 들여서 쓴다.
+     * 예. print('사람이 너무 많아! 몇 명은 못먹겠네')
+
+## 실습2 `if2.py`
+조건식에 대소비교가 쓰인 경우
+```py
+if 3<5:
+    print("조건식이 True이므로 실행됩니다.")
+if 3>5:
+    print("조건식이 False이므로 실행되지 않습니다.") 
+```
+조건식에 True/False가 쓰인 경우
+* True/False의 첫 글자인 T와 F는 대문자로 써야 한다.
+```py
+if True:
+    print("조건식이 True이므로 실행됩니다.")
+if False:
+    print("조건식이 False이므로 실행되지 않습니다.")
+```
+
+# 조건식
+다양한 조건을 표현하는 방법
+
+## 실습 PowerShell
+```powershell
+# 부등호
+# 크다, 작다
+>>> 0 < 10
+True
+>>> 4 > 10
+False
+# 크거나 같다, 작거나 같다
+>>> 3 <= 10
+True
+>>> 15 >= 10
+True
+# 순서를 바꿔 등호를 먼저 쓴 부등호 =< =>는 파이썬에서 쓸 수 없는 표현이다.
+>>> 5 =< 10
+  File "<stdin>", line 1
+    5 =< 10
+    ^
+SyntaxError: cannot assign to literal
+>>> 5 => 10
+  File "<stdin>", line 1
+    5 => 10
+    ^
+SyntaxError: cannot assign to literal
+# 같다 == (=는 대입을 위한 예약어)
+>>> 5 = 5
+  File "<stdin>", line 1
+    5 = 5
+    ^
+SyntaxError: cannot assign to literal
+>>> 5 == 5
+True
+# 같지 않다 !=
+>>> 5 != 5
+False
+>>> 10 != 5
+True
+# 블리언 True, False를 이용한 조건문
+>>> if True:
+...  print(10)
+...
+10
+>>> if False:
+...  print(10)
+...
+# and
+>>> True and True
+True
+>>> True and False
+False
+>>> False and True
+False
+>>> False and False
+False
+# or
+>>> True or True
+True
+>>> True or False
+True
+>>> False or True
+True
+>>> False or False
+False
+# not
+>>> not True
+False
+>>> not False
+True
+```
+
+
+## 조건식 요약정리
+### 조건
+* 숫자 비교
+  * 크다
+    * 0 < 10
+    * 10 > 11
+  * 크거나 같다, 작거나 같다
+    * 3 <= 10
+    * 15 >= 10
+  * 같다
+    * 5 == 5
+  * 같지 않다
+    * 5 != 10
+* 비교의 결과는 True 또는 False
+### boolean연산
+* and연산
+  * 두 조건이 모두 참인지를 체크
+* or
+  * 두 조건 중 하나라도 참이다
+* not
+  * true/false를 뒤집기 위해 사용
+### 예시
+```powershell
+# a는 20대이다.
+20 <= a and a < 30
+# a는 18세 미만 또는 60세 이상이다.
+a < 18 or 60 <= a
+```
+
+# 블럭
+파이썬에서 콜론(:) 다음에 들여쓴 코드는 블럭이라고 한다.  
+블럭은 반드시 콜론문자 다음에 들여쓰기 다음에 나타난다.  
+들여쓰기는 몇칸을 하든 자유이지만 4칸이 권장된다.  
+파이썬을 쓰는 편집기에서는 탭키를 누르면 자동으로 4칸을 들여쓰는 것이 보통이다.  
+블럭은 여러 줄로 쓰일 수 있다.  
+여러 줄로 쓰일 때는 반드시 모든 줄이 들여쓰기가 일치해야 한다.  
+만약 들여쓰기가 오류나면 문법 오류가 발생한다.  
+블럭을 마치고 싶을 때는 블럭을 시작하기 전에 들여쓴 만큼 내어써야 한다.  
+한 번이라도 다시 내어쓴 블럭은 끝난 블럭이 된다.  
+한 번 끝난 블럭은 다시 열거나 할 수 는 없다.  
+블럭 안에 다른 블럭이 들어갈 수도 있다.  
+들여쓰기 된 상태에서 시작된 블럭은 그 밖의 블럭에 포함되어 있다.  
+동작 원리는 바깥 블럭과 안쪽 블럭이 똑같다.(조건문에 따라 실행된다.)  
+코드 블럭을 정확히 구분할 수 있어야 한다.(들여쓰기를 제대로 볼 수 있어야)  
+블럭 안의 블럭이라는 개념을 잘 생각해보면  
+파이썬`.py`이라는 파일이 제일 바깥 블럭이라고 생각할 수 있다.
+
+## 실습 `ifblock.py`
+```py
+# 블럭
+if True:
+    print('블럭에 속한 코드')
+
+    if False:
+        print('한 줄 더')
+
+    if True:
+        print('또 한 줄 더')
+
+        if True:
+            print('블럭 하나 더')
+
+    print('블럭의 끝 코드')
+
+print ('블럭 끝')
+
+if False:
+    print('블럭에 속한 코드')
+
+    if False:
+        print('한 줄 더')
+
+    if True:
+        print('또 한 줄 더')
+
+    print('블럭의 끝 코드')
+
+print ('블럭 끝')
+
+if False:
+    print('조건이 안 맞는 코드')
+
+    if True:
+        print('조건이 맞는 코드')
+
+    print('어쨋든 실행되지 않는 코드')
+
+print ('다시 바깥에 있는 코드')
+    
+```
+## 블럭 요약정리
+* 함께 실행 되는 하나의 코드 덩어리
+* 들여쓰기로 블럭을 구분한다.
+* 들여쓰기가 어긋나면 오류가 발생한다.
+* 블럭 안에 다른 블럭이 들어갈 수 있다.
+* 내부의 블럭은 외부의 블럭에 종속적
+* 파이썬 코드 전체를 하나의 블럭으로 볼 수 있다.
+
+# if else
+## else
+* if조건문에서 조건이 맞지 않는 상황에 쓰이는 else
+* else는 if없이 혼자 쓸 수 없다.
+## elif
+* else와 if의 블럭 2개를 하나의 블록으로 합칠 수 있다.
+* if else와 elif는 기능적으로 같다
+* 결국 차이는 '눈에 어떻게 보이는가'에 따른 차이일 뿐.
+* 결정은 사용자 선호의 문제
+## 실습 `ifelse.py`
+```py
+# 가위바위보
+# 변수 선언
+SCISSOR = '가위'
+ROCK = '바위'
+PAPER = '보'
+
+WIN = '이겼다!'
+DRAW = '비겼다.'
+LOSE = '졌다...'
+
+mine = '보'
+yours = '바위'
+
+# if else : 비기거나 이기거나 지거나
+if mine == yours:
+    result = DRAW
+else:
+    result = '이기거나 지거나'
+print(result)
+
+# 방법1. if else 나열
+if mine == yours:
+    result = DRAW
+else:
+    if mine == SCISSOR:
+        if yours == ROCK:
+            result = LOSE
+        else:
+            result = WIN
+    else :
+        if mine == ROCK:
+            if yours == PAPER:
+                result = LOSE
+            else : 
+                result = WIN
+        else :
+            if mine == PAPER:
+                if yours == SCISSOR:
+                    result = LOSE
+                else:
+                    result = WIN
+            else:
+                print('이상해요')
+print(result)
+
+# 방법2. elif 사용
+if mine == yours:
+    result = DRAW
+else:
+    if mine == SCISSOR:
+        if yours == ROCK:
+            result = LOSE
+        else:
+            result = WIN
+    elif mine == ROCK:
+        if yours == PAPER:
+            result = LOSE
+        else : 
+            result = WIN
+    elif mine == PAPER:
+        if yours == SCISSOR:
+            result = LOSE
+        else:
+            result = WIN
+    else:
+        print('이상해요')
+print(result)
+
+# 방법3. elif 사용2
+if mine == yours:
+    result = DRAW
+elif mine == SCISSOR:
+    if yours == ROCK:
+        result = LOSE
+    else:
+        result = WIN
+elif mine == ROCK:
+    if yours == PAPER:
+        result = LOSE
+    else : 
+        result = WIN
+elif mine == PAPER:
+    if yours == SCISSOR:
+        result = LOSE
+    else:
+        result = WIN
+else:
+    print('이상해요')
+print(result)
+```
+## if else 요약정리
+### else
+* if의 조건이 맞지 않는 경우 항상 실행
+* 반드시 if뒤에 나와야 한다.
+    ```py
+    if mine == yours:
+        result = DRAW
+    else:
+        result = '이기거나 지거나'
+    ```
+### elif
+* else 와 if의 결합으로 조건이 맞지 않는 경우 다른 경우를 검사
+* 기능의 차이가 아닌 보이는 것의 차이(선호의 문제 - 내가 보고 해석하기 쉬운 방법을 사용하면 된다.)
+    ```py
+    if mine == SCISSOR:
+        result = '가위'   # 조건이 참일 때 실행
+    elif mine == ROCK:
+        result = '바위'   # 다른 조건이 참일 때 실행
+    else:
+        result = '나머지'    # 조건이 거짓일 때 실행
+    ```
