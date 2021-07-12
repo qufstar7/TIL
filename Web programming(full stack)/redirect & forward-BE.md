@@ -2,6 +2,50 @@
 
 # redirect & forward - BackEnd
 
+- [redirect & forward - BackEnd](#redirect--forward---backend)
+- [REDIRECT](#redirect)
+  - [예시 - 인터넷 게시판에서 글을 작성할 때](#예시---인터넷-게시판에서-글을-작성할-때)
+  - [핵심 개념](#핵심-개념)
+  - [redirect의 과정](#redirect의-과정)
+  - [redirect 실습](#redirect-실습)
+    - [redirect01.jsp](#redirect01jsp)
+    - [redirect02.jsp](#redirect02jsp)
+    - [실행 결과](#실행-결과)
+    - [브라우저에서 리다이렉트 확인](#브라우저에서-리다이렉트-확인)
+    - [예제 동작 설명](#예제-동작-설명)
+    - [주의사항](#주의사항)
+  - [리다이렉션의 장점과 단점](#리다이렉션의-장점과-단점)
+    - [장점](#장점)
+    - [단점](#단점)
+  - [참고 자료](#참고-자료)
+- [FORWARD](#forward)
+  - [핵심 개념](#핵심-개념-1)
+  - [forward란?](#forward란)
+    - [주의사항](#주의사항-1)
+  - [forward의 과정](#forward의-과정)
+  - [Forward 실습](#forward-실습)
+  - [실습 코드](#실습-코드)
+    - [`FrontServlet.java`](#frontservletjava)
+    - [`NextSevlet.java`](#nextsevletjava)
+  - [생각해보기](#생각해보기)
+    - [서블릿 > jsp 포워드](#서블릿--jsp-포워드)
+  - [참고 자료](#참고-자료-1)
+- [servlet & jsp연동](#servlet--jsp연동)
+  - [핵심 개념](#핵심-개념-2)
+  - [Servlet과 JSP연동](#servlet과-jsp연동)
+  - [servlet jsp연동 실습](#servlet-jsp연동-실습)
+  - [실습코드](#실습코드)
+    - [LogicServlet.java](#logicservletjava)
+    - [result.jsp](#resultjsp)
+  - [Servelt과 jsp의 연동의 과정](#servelt과-jsp의-연동의-과정)
+  - [생각해보기](#생각해보기-1)
+    - [URL patterns](#url-patterns)
+    - [syntax](#syntax)
+    - [URL Patterns 정리](#url-patterns-정리)
+  - [참고 자료](#참고-자료-2)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # REDIRECT
 * http프로토콜로 정해진 규칙
