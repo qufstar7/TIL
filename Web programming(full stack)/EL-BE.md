@@ -25,6 +25,9 @@
     - [el01.jsp](#el01jsp)
   - [실습 2](#실습-2)
     - [el02.jsp](#el02jsp)
+    - [결과](#결과)
+  - [isElIgnored](#iselignored)
+    - [isELIgnored 결과](#iselignored-결과)
   - [생각해보기](#생각해보기)
   - [참고 자료](#참고-자료)
 
@@ -199,9 +202,44 @@ m : ${ m } <br>
 </body>
 </html>
 ```
+### 결과
+```
+k : 10 
+K + 5 : 15 
+K - 5 : 5 
+K * 5 : 50 
+K / 5 : 2.0 
+
+k : 10 
+m : true 
+k > 5 : true 
+k < 5 : false 
+k <= 10 : true 
+k >= 10 : true 
+m : true 
+!m : false 
+```
+## isElIgnored
 * EL 문법 사용하지 않고 문자열 그대로 표시할 때
 ```jsp
 <%@ page isELIgnored = "true" %> 
+```
+### isELIgnored 결과
+```
+k : ${ k } 
+K + 5 : ${ k + 5 } 
+K - 5 : ${ k - 5 } 
+K * 5 : ${ k * 5} 
+K / 5 : ${ k div 5 } 
+
+k : ${ k } 
+m : ${ m } 
+k > 5 : ${ k > 5 } 
+k < 5 : ${ k < 5 } 
+k <= 10 : ${ k <= 10 } 
+k >= 10 : ${ k >= 10 } 
+m : ${ m } 
+!m : ${ !m } 
 ```
 ## 생각해보기
 * 표현식으로 값을 출력하는 것과 EL을 이용해서 값을 출력하는 것 중 어떤 게 편해 보이나요? 
