@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  transform: rotate(330deg);
+  position: absolute;
+  margin: 70px 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  float: right;
+}
+
+.card{
+  width:
+}
+
+#todoCard {
+  width
+}
+
+#doingCard {
+}
+
+#doneCard {
+}
