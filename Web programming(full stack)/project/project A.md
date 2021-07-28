@@ -310,3 +310,51 @@ img {
 </body>
 </html>
 ```
+## TodayServlet.java
+```java
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/today")
+public class TodayServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public TodayServlet() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		LocalDateTime today = LocalDateTime.now();
+		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/M/d h:m");
+		String nowString = today.format(dateTimeFormatter);
+
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out = response.getWriter();
+
+		out.println("<html>");
+		out.println("<head><title>What time is it?</title></head>");
+		out.println("<body>");
+		out.println("<h2>");
+		out.println("<a href=\"index.html\">메인화면</a>");
+		out.println("</h2>");
+		out.println("<h1 style=\"position:absolute; left:50%; top:50%; transform:translate(-50%,-50%)\">");
+		out.println("현재시간 : ");
+		out.println(nowString);
+		out.println("</h1>");
+		out.println("</body>");
+		out.println("</html>");
+		out.close();
+	}
+
+}
+```
