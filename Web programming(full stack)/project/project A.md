@@ -1,10 +1,9 @@
-# BE_PJT A-1. 나를 소개하는 홈페이지 만들기
-
+# Project A. 나를 소개하는 홈페이지 만들기
 
 # 1. 프로젝트 개요
 ‘나를 소개하는 웹페이지’ 만들기
 
-여러분들은 HTML페이지 3개와 서블릿 하나를 Tomcat 서버 위에서 동작하게 해야 한다.
+HTML페이지 3개와 서블릿 하나를 Tomcat 서버 위에서 동작하게 해야 한다.
 
 # 기획서
 > [부코 웹 pjt1 자기소개페이지.pptx](https://docs.google.com/presentation/d/1Q0qZO7mEh5VFcm2riFsP0XViNaKUP7Bj5NCjiia3hyo/edit#slide=id.g7b8037d172_0_0)
