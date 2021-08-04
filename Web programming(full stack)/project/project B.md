@@ -245,47 +245,45 @@ Todo테이블에 입력, 수정, 조회하는 클래스 작성
 dao : 데이터 접근 객체
 ### 클래스다이어그램
 ```
-addTodo(TodoDto) : int
-getTodos() : List<TodoDto>
+addTodo(TodoDto) :int
+getTodos() :List<TodoDto>
 updateTodo(TodoDto) :int
 ```
 ### 작성단계
-1. New class 생성
+* New class 생성
    * kr.or.connect.dㅁo 패키지 안에 생성
    * 이름은 TodoDao
-2. 데이터를 한 건 가져오는 getTodoDto 메서드 하나 추가
-   1. TodoDto에 관한 정보를 가져오기 때문에 getTodoDto라는 메서드 생성 (데이터 하나를 담아낼 객체가 TodoDto)
-   2. 기본 키인 'id'를 기준으로 데이터를 가져오므로 파라미터는 `Long id`
-   3. 리턴해야될 todoDto를 하나 선언 (null)
-   4. todoDto를 리턴
-   5. 단계별 프로그램 수행을 위한 객체 생성 코드 추가
-      * 연결을 맺어 낼 수 있는 Connection 객체
-      * 명령할 수 있는 statement 객체
-      * 결과 값을 얻어 낼 수있는 ResultSet 객체
-   6. 예외처리
-      * 데이터베이스에 연결을 해서 데이터를 가져오기 때문에 예외처리 해야 할 부분이 많다.(중간 접속 끊긴 상황 등등) > try-catch구문사용
-      1. 닫는 구문 finally - 반드시 수행되는 구문
-         * ps에서 에러가 발생한다면 rs 는 null이기 때문에 새로운 에러가 발생할 수 있다. 따라서 적절한 조건문을 이용해 try-catch부분을 감싸서 해결한다.
-      2. 드라이버 로딩 > forName()메서드사용
-      3. 커넥션 객체를 얻어오기 > DriverManager()메서드 사용 > url, user, password를 인자값으로 받음
-   7. 상수 선언
-      * url, user, password는 계속해서 db에 접근해서 데이터를 가져올 때마다 사용하므로 상수로 선언한다.
-   8. connection 객체를 이용해서 statement객체를 얻어 낼 수 있었고 statement객체에는 쿼리문을 넣어준다.
-      ```sql
-      select id, title, name, sequence, type, regdate from todo order by regdate desc select id, title, name, sequence, type, regdate from todo where type = 'TODO' order by regdate desc
-      ```
-      * id를 기준으로 todo테이블에서 5개의 컬럼을 조회하는 쿼리문 
-      * PreparedStatement()의 특징상 ?를 사용하면 ?가 바인딩 되는 부분만 바뀐다.
-      * ?에 해당하는 값을 바꿔줘야 한다.
-      * id가 Long 타입이기 때문에 setLong메서드 사용
-   10. 실행하기 위한 코드 추가
-      * executeQuery()메서드 사용
-   11. ResultSet rs객체가 알고 있는 결과값을 꺼내온다
-       * 결과 값이 없을 수도 있으므로 조건문에서 next()메서드를 사용한다.
-       * rs의 next()메서드는 값이 존재하면 다음 값으로 커서를 이동시키고 true값을 리턴한다.
-       * rs의 get()메서드를 이용해 값을 꺼내온다.
-         * 인자값에 쿼리문의 컬럼 순서에 맞는  올바른 컬럼번호나 컬럼 이름을 작성한다.
+1. `addTodo(TodoDto) : int` 
+   * 데이터를 추가하는 메서드
+   * 한 건의 데이터를 입력하는 메서드
+   * 값을 입력할 인자로 `todoDto`을 가져온다.
+   * int형 변수를 하나 선언해서 "몇 건의 결과가 추가되었습니다" 라는 결과값을 리턴할 수 있게 한다.
+   * 결과값을 ResultSet으로 가져오지 않기 때문에 ResultSet 객체는 사용 x 
+   * Connection, PreparedStatement 객체 선언
+   * 드라이버로딩 > getConnection()메서드로 conn객체 얻어옴 > conn 객체로부터 ps 객체를 가져온다.
+   * sql문
+		```sql
+		INSERT INTO todo ()
+		```
+   * ?가 들어간 쿼리문은 완전한 쿼리문이 아니기 때문에 물음표 값을 바인딩하는 코드가 필요하므로 PS객체에 set()메서드{파라미터 : 물음표의 순서 , todoDto객체가 가지고 있는 getter()메서드 중 가져올 객체}를 이용하여 작성.
+   * select와 달리 insert, update, delete문은 executeUpdate메서드를 사용하므로 이 메서드를 사용해 실행 코드 작성
+   * 쿼리가 실행되면 int값을 `insertCount`에 받아서 가져온다.
+   * 예외처리
+   * 얻어온 객체에 반대 순서대로 닫아주는 코드까지 작성
+2. `getTodos() : List<TodoDto>`
+   * 데이터를 모두 조회하여 가져오는 메서드
+   * TodoDto의 모든 List를 조회하기위해 ArrayList<>사용
+   * try-with resource라는 문법을 사용해 연결을 close하는 부분을 자동적으로 처리한다. 
+3. `updateTodo(TodoDto) :int`
+   * 데이터를 수정하는 메서드
+   * addTodo메서드와 쿼리문의 내용만 다르고 전부 같다.
+   * ResultSet객체는 사용하지 않는다
+   * 드라이버 로드 후 드라이버를 이용해 get connnection한다.
+   * 쿼리문을 ?를 이용하여 수정기능을 구현한다.
+   * ?를 정의해주고 결과를 executeUpdate한다.
+   * 예외처리한다(try-wite resource로 수정가능)
 
+### 실습코드
 ```java
 package kr.or.connect.dao;
 
@@ -293,72 +291,178 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-
+import java.util.ArrayList;
+import java.util.List;
 import kr.or.connect.dto.TodoDto;
 
 public class TodoDao {
-
-	private static String dburl = "jdbc:mysql://localhost:3306/connectdb";
+	private static String dburl = "jdbc:mysql://localhost:3306/connectdb?allowMultiQueries=true";
 	private static String dbUser = "connectuser";
 	private static String dbpasswd = "connect123!@#";
 
-	public TodoDto getTodoDto(Long id) {
-		TodoDto todoDto = null;
-
+	public int addTodo(TodoDto todoDto) {
+		int insertCount = 0;
 		Connection conn = null;
 		PreparedStatement ps = null;
-		ResultSet rs = null;
-
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-
-			String sql = "SELECT id, title, name, sequence, type, regdate FROM todo ORDER BY regdate DESC SELECT id, title, name, sequence, type, regdate FROM todo WHERE type = 'TODO' ORDER BY regdate DESC";
+			String sql = "INSERT INTO todo(title, name, sequence) VALUES(?, ?, ?)";
 			ps = conn.prepareStatement(sql);
-			ps.setLong(1, id);
-
-			rs = ps.executeQuery();
-
-			if (rs.next()) {
-				Long idResult = rs.getLong(1);
-				String titleResult = rs.getString(2);
-				String nameResult = rs.getString(3);
-				int sequenceResult = rs.getInt(3);
-				String typeResult = rs.getString(4);
-				String regDateResult = rs.getString(5);
-
-				todoDto = new TodoDto(idResult, titleResult, nameResult, sequenceResult, typeResult, regDateResult);
-			}
-
+			ps.setString(1, todoDto.getTitle());
+			ps.setString(2, todoDto.getName());
+			ps.setInt(3, todoDto.getSequence());
+			insertCount = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
 			if (ps != null) {
 				try {
 					ps.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
+				} catch (Exception e) {
 				}
 			}
 			if (conn != null) {
 				try {
 					conn.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
+				} catch (Exception e) {
 				}
 			}
 		}
+		return insertCount;
+	}
 
-		return todoDto;
+	public List<TodoDto> getTodo() {
+		List<TodoDto> list = new ArrayList<>();
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		String sql = "select id, title, name, sequence, type, regdate from todo order by regdate desc; select id, title, name, sequence, type, regdate from todo where type = 'TODO' order by regdate desc;";
+		try (Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+				PreparedStatement ps = conn.prepareStatement(sql)) {
+			try (ResultSet rs = ps.executeQuery()) {
+				while (rs.next()) {
+					long id = rs.getLong("id");
+					String name = rs.getString("name");
+					String regDate = rs.getString(3);
+					Integer sequence = rs.getInt(4);
+					String title = rs.getString(5);
+					String type = rs.getString(6);
+					TodoDto todoDto = new TodoDto(id, name, regDate, sequence, title, type);
+					list.add(todoDto);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return list;
+	}
+
+	public int updateTodo(TodoDto todoDto) {
+		int updateCount = 0;
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+			String sql = "UPDATE todo SET type = ? where id = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, todoDto.getType());
+			ps.setLong(2, todoDto.getId());
+			updateCount = ps.executeUpdate();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (Exception ex) {
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (Exception ex) {
+				}
+			}
+		}
+		return updateCount;
+	}
+}
+```
+### 기능 확인 연습 코드
+1. `addExam.java`
+   * addTodo()의 데이터 추가 기능 확인용 연습 파일
+```java
+package kr.or.connect;
+
+import kr.or.connect.dao.TodoDao;
+import kr.or.connect.dto.TodoDto;
+
+public class addExam {
+	public static void main(String[] args) {
+		String title = "0000하기";
+		String name = "김철수";
+		int sequence = 22;
+
+		TodoDto todoDto = new TodoDto(null, name, null, sequence, title, null);
+
+		TodoDao dao = new TodoDao();
+		int insertCount = dao.addTodo(todoDto);
+
+		System.out.println(insertCount);
+	}
+}
+```
+
+2. `getExam.java`
+   * todo테이블의 데이터를 모두 조회하는 기능을 구현한 getTodo()메서드를 확인하기 위한 간단한 연습 파일
+```java
+package kr.or.connect;
+
+import java.util.List;
+
+import kr.or.connect.dao.TodoDao;
+import kr.or.connect.dto.TodoDto;
+
+public class getListExam {
+	public static void main(String[] args) {
+
+		TodoDao dao = new TodoDao();
+
+		List<TodoDto> list = dao.getTodo();
+
+		for (TodoDto todoDto : list) {
+			System.out.println(todoDto);
+		}
+	}
+}
+```
+
+3. `updateExam.java`
+   * updateTodo()메서드의 수정기능 확인용 파일
+```java
+package kr.or.connect;
+
+import kr.or.connect.dao.TodoDao;
+import kr.or.connect.dto.TodoDto;
+
+public class updateExam {
+	public static void main(String[] args) {
+
+		long id = 1;
+		String type = "Doing";
+				
+		TodoDto todoDto = new TodoDto(id, null, null, null, null, type);
+
+		TodoDao dao = new TodoDao();
+		int updateCount = dao.updateTodo(todoDto);
+
+		System.out.println(updateCount);
 	}
 }
 ```
