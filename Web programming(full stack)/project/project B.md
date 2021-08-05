@@ -466,3 +466,116 @@ public class updateExam {
 	}
 }
 ```
+
+## 5. MainServlet, Main.jsp 작성
+### MainServlet
+* TodoDao를 이용해 결과를 조회해서 main.jsp에 전달하는 서블릿
+* src/main/java/kr/or/connect/servlet 패키지에 생성
+```java
+package kr.or.connect.servlet;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kr.or.connect.dao.TodoDao;
+import kr.or.connect.dto.TodoDto;
+
+@WebServlet("/MainServlet")
+public class MainServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public MainServlet() {
+        super();
+    }
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		TodoDao dao = new TodoDao();
+		List<TodoDto> dtoList = new ArrayList<TodoDto>();
+		dtoList = dao.getTodo();		
+		request.setAttribute("dtoList", dtoList);		
+		RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
+		rd.forward(request, response);
+	}
+
+}
+
+```
+### main.jsp
+* MainServlet에서 전달받은 결과를 JSTL과 EL을 이용해 출력
+```jsp
+<%@page import="java.util.ArrayList"%>
+<%@page import="kr.or.connect.TodoList.dto.TodoDto"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Todo-List</title>
+<link rel="stylesheet" href="main.css?after">
+</head>
+<body>
+	
+<header>
+  <button class="new" onclick="location.href='http://localhost:8080/TodoList/TodoFormServlet'">할일 등록</button>
+</header>
+
+<section id = "sec-body">
+  <section id = "left" class="com" style="width:100px"></section>
+  <section id = "TODO" class="com">
+    <p class="title">TODO</p>
+    <c:forEach var="todo" items="${dtoList}">
+		<c:if test="${todo.getType() eq 'TODO'}">
+		    <section class="content">
+		      <p class="content-title">${todo.getTitle() }</p>
+		      <p class="content-data">등록날짜 : ${todo.getRegDate() }, ${todo.getName() } 우선순위 : ${todo.getSequence() }</p>
+		      <button id="${todo.getId()}#${todo.getType()}" class="nextType" onclick="next(id)">-></button>
+		    </section>
+		</c:if>
+  	</c:forEach>
+  </section>
+  <section id = "DOING" class="com">
+    <p class="title">DOING</p>
+        <c:forEach var="todo" items="${dtoList}">
+		<c:if test="${todo.getType() eq 'DOING'}">
+		    <section class="content">
+		      <p class="content-title">${todo.getTitle() }</p>
+		      <p class="content-data">등록날짜 : ${todo.getRegDate() }, ${todo.getName() } 우선순위 : ${todo.getSequence() }</p>
+		      <button id="${todo.getId()}#${todo.getType()}" class="nextType" onclick="next(id)">-></button>
+		    </section>
+		</c:if>
+  		</c:forEach>
+  </section>
+  <section id = "DONE" class="com">
+    <p class="title">DONE</p>
+        <c:forEach var="todo" items="${dtoList}">
+		<c:if test="${todo.getType() eq 'DONE'}">
+		    <section class="content">
+		      <p class="content-title">${todo.getTitle() }</p>
+		      <p class="content-data">등록날짜 : ${todo.getRegDate() }, ${todo.getName() } 우선순위 : ${todo.getSequence() }</p>
+		      <c:set var="vid3" scope="request" value="${todo.getId() }"/>
+		      <button id="${todo.getId()}#${todo.getType()}" class="nextType" onclick="buttonDelete(id)">X</button>
+		    </section>
+		</c:if>
+  		</c:forEach>
+  </section>
+  
+</section>
+  
+</body>
+
+<script type="text/javascript" src="./main.js?v=<%=System.currentTimeMillis() %>"></script>
+</html>
+```
