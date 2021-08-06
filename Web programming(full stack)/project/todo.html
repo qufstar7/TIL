@@ -1,130 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>todo</title>
+    <meta charset="UTF-8">
+    <title>PJT2_TODO-LIST</title>
     <link rel="stylesheet" href="todostyle.css">
 </head>
 
 <body>
-    <div>
-        <h1>나의 해야할 일들</h2>
-    </div>
-    <section>
-        <button>새로운 TODO 등록</button>
+    <header>
+        <div id="todo-title-box">
+            <h1 id="todo-title">나의 해야할 일들</h1>
+            <div id="header-button-box">
+                <button id="add-new-todo-button">새로운 TODO 등록</button></div>
+        </div>
+
+    </header>
+
+    <section id="main-content">
+        <section id="left-section">
+            <div class="title">
+                <h1>TODO</h1>
+            </div>
+            <div class="card">
+                <button class="card-button"></button>
+            </div>
+        </section>
+
+        <section id="mid-section">
+            <div class="title">
+                <h1>DOING</h1>
+            </div>
+            <div class="card">
+                <button class="card-button"></button>
+            </div>
+        </section>
+
+        <section id="right-section">
+            <div class="title">
+                <h1>DONE</h1>
+            </div>
+            <div class="card">
+                <button class="card-button"></button>
+            </div>
+        </section>
     </section>
-
-
-    <!--     <section>
-        <div class="inline_card">
-            TODO
-            <div>
-                <div>
-                    자바스크립트 공부하기
-                    등록날짜:2018.03.10, 홍길동, 우선순위1
-                </div>
-                <div>
-                    리포트 제출하기
-                    등록날짜:2018.02.20, 홍길동, 우선순위3
-                </div>
-            </div>
-        </div>
-
-        <div class="inline_card">
-            DOING
-            <div>
-                <div>
-                    다음달 계획서 작성방법 고민하기
-                    등록날짜:2018.01.10, 홍길동, 우선순위1
-                </div>
-                <div>
-                    데모페이지 개발
-                    등록날짜:2018.03.12, 나길동, 우선순위2
-                </div>
-                <div>
-                    웹 관련 책 찾아보기
-                    등록날짜:2018.03.27, 고길동, 우선순위1
-                </div>
-                <div>
-                    웹폰트 공부하기
-                    등록날짜:2018.02.30, 강길동, 우선순위2
-                </div>
-            </div>
-        </div>
-
-        <div class="inline_card">
-            DONE
-            <div>
-                <div>
-                    <div>CSS학습</div>
-                    <div>등록날짜:2018.03.27, 고길동, 우선순위1</div>
-                </div>
-                <div>
-                    JAVA 객체지향 설계 복습
-                    등록날짜:2018.01.01, 나길동, 우선순위2
-                </div>
-                <div>
-                    이사할 곳 알아보기
-                    등록날짜:2018.03.15, 강길동, 우선순위3
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <section>
-        <ul class="inline_card">
-            <dt>TODO</dt>
-            <li>
-                자바스크립트 공부하기
-                등록날짜:2018.03.10, 홍길동, 우선순위1
-            </li>
-            <li>
-                리포트 제출하기
-                등록날짜:2018.02.20, 홍길동, 우선순위3
-            </li>
-
-        </ul>
-
-        <ul class="inline_card">
-            <dt>DOING</dt>
-            <li>
-                다음달 계획서 작성방법 고민하기
-                등록날짜:2018.01.10, 홍길동, 우선순위1
-            </li>
-            <li>
-                데모페이지 개발
-                등록날짜:2018.03.12, 나길동, 우선순위2
-            </li>
-            <li>
-                웹 관련 책 찾아보기
-                등록날짜:2018.03.27, 고길동, 우선순위1
-            </li>
-            <li>
-                웹폰트 공부하기
-                등록날짜:2018.02.30, 강길동, 우선순위2
-        </ul>>
-
-        <ul class="inline_card">
-            <dt>DONE</dt>
-            <li>
-                CSS학습
-                등록날짜:2018.03.27, 고길동, 우선순위1
-            </li>
-            <li>
-                JAVA 객체지향 설계 복습
-                등록날짜:2018.01.01, 나길동, 우선순위2
-            </li>
-            <li>
-                이사할 곳 알아보기
-                등록날짜:2018.03.15, 강길동, 우선순위3
-            </li>
-        </ul>>
-    </section>
-
-
 
 </body>
 

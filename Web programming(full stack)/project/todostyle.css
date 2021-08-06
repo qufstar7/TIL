@@ -1,31 +1,55 @@
-* {
-  box-sizing: border-box;
+#todo-title-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-h1 {
+#todo-title {
   transform: rotate(330deg);
-  position: absolute;
   margin: 70px 10px;
+  display: inline-block;
 }
 
-ul {
-  list-style: none;
-}
-
-button {
+#add-new-todo-button {
   float: right;
+  margin: 22px;
+  width: 200px;
+  height: 50px;
+  font-size: 17px;
 }
 
-.card{
-  width:
+#main-content {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 100px;
 }
 
-#todoCard {
-  width
+#left-section {
+  width: 25%;
+  padding: 10px;
 }
 
-#doingCard {
+#mid-section {
+  width: 25%;
+  padding: 10px;
 }
 
-#doneCard {
+#right-section {
+  width: 25%;
+  padding: 10px;
+}
+
+.title {
+  color: white;
+  background-color: black;
+}
+
+.card {
+  margin: 10px;
+  background-color: aquamarine;
+}
+
+.card-button {
+  float: right;
+  margin-right: 10px;
 }

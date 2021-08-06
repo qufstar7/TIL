@@ -468,14 +468,21 @@ public class updateExam {
 ```
 
 ## 5. MainServlet, Main.jsp 작성
-### MainServlet
+* Servlet과 jsp는 각각 프로그램 로직 수행, 결과 출력에 장점이 있다.
+* 따라서 MainServlet에서 TodoDao를 이용한 결과, 즉 add, get, update의 기능을 구현하는 로직을 작성하고
+* Main.jsp에서 HTML문으로 결과를 출력하도록 작성한다.
+## 5-1. MainServlet 작성
 * TodoDao를 이용해 결과를 조회해서 main.jsp에 전달하는 서블릿
 * src/main/java/kr/or/connect/servlet 패키지에 생성
+* TodoDao객체 dao 생성
+* TodoDao를 저장할 ArrayList객체, todoDtoList 생성 
+* dtoList에 dao(TodoDao객체)의 getTodo()메서드를 대입
+* request.setAttribute()메서드로 dtoList의 값을 저장
+* RequestDispatcher 객체, rd 에 request의 getRequestDispatcher()를 사용해 main.jsp로 포워드
 ```java
 package kr.or.connect.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -491,25 +498,41 @@ import kr.or.connect.dto.TodoDto;
 @WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public MainServlet() {
-        super();
-    }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public MainServlet() {
+		super();
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		TodoDao dao = new TodoDao();
-		List<TodoDto> dtoList = new ArrayList<TodoDto>();
-		dtoList = dao.getTodo();		
-		request.setAttribute("dtoList", dtoList);		
+		List<TodoDto> todoDtoList = dao.getTodo();
+		request.setAttribute("todoDtoList", todoDtoList);
 		RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
 		rd.forward(request, response);
 	}
-
 }
-
 ```
-### main.jsp
-* MainServlet에서 전달받은 결과를 JSTL과 EL을 이용해 출력
+## 5-2. main.jsp 작성
+* MainServlet에서 전달받은 결과를 html, JSTL, EL을 이용해 출력(java 코드 사용 최대한 x)
+### EL
+표현언어
+* 문법
+  * `${expr}`
+* 예제
+```html
+<jsp:include page="/module/${skin.id}/header.jsp" flush="true" />
+
+<b>${sessionScope.member.id}</b>님 환영합니다.
+```
+* 사용법
+  * jsp의 스크립트 요소(스크립트릿, 표현식, 선언부)를 제외한 나머지 부분에서 사용될 수 있으며, 표현식을 통해서 표현식보다 편리하게 값을 출력할 수 있다.
+### JSTL
+JSTL은 jsp페이지에서 조건문, 반복문 처리 등을 html태그의 형태로 작성할 수 있게 도와준다.
+* 사용하려면
+  * >[jar파일 다운로드 사이트](http://tomcat.apache.org/download-taglibs.cgi)
+  * 위 사이트에서 3가지 jar파일을 다운로드한 후 WEB-INF/lib/ 폴더에 복사
+### main.jsp 작성코드
 ```jsp
 <%@page import="java.util.ArrayList"%>
 <%@page import="kr.or.connect.TodoList.dto.TodoDto"%>
@@ -533,7 +556,8 @@ public class MainServlet extends HttpServlet {
 </header>
 
 <section id = "sec-body">
-  <section id = "left" class="com" style="width:100px"></section>
+  <section id = "left" class="com" style="width:100px">
+  </section>
   <section id = "TODO" class="com">
     <p class="title">TODO</p>
     <c:forEach var="todo" items="${dtoList}">
@@ -570,8 +594,7 @@ public class MainServlet extends HttpServlet {
 		    </section>
 		</c:if>
   		</c:forEach>
-  </section>
-  
+  </section>  
 </section>
   
 </body>

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+header {
+  height: 70px;
+}
+
+.new {
+  width: 25%;
+  font-size: 20px;
+  background-color: #77bae9;
+  border: 1px solid black;
+  float: right;
+  margin-top: 18px;
+  margin-right: 18px;
+  padding: 7px;
+}
+
+.com {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+.title {
+  font-size: 25px;
+  font: border;
+  background-color: #5aa;
+  color: white;
+  padding: 10px;
+}
+
+.content {
+  background-color: #33aaee;
+  height: 70px;
+}
+
+.content-data {
+  font-size: 15px;
+  display: inline;
+  margin: 10px;
+}
+
+.content-title {
+  font-size: 27px;
+  font: border;
+  height: 32px;
+  margin: 10px;
+}
+
+.nextType {
+  float: right;
+  margin-right: 15px;
+}

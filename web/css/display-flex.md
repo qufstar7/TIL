@@ -35,7 +35,7 @@ flex요소 **가로선상 정렬**
 * center
   * 가운데 정렬 (라인을 따라 중앙에 배치)
 * space-between
-  * 요소들 사이에 동일한 간격을 둠
+  * 요소들 앞, 뒤, 사이에 동일한 간격을 둠
 * space-around
   * 요소들 사이에 동일한 간격을 둠
 * space-evenly
