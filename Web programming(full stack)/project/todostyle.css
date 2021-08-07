@@ -1,4 +1,4 @@
-#todo-title-box {
+#header-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,6 +8,14 @@
   transform: rotate(330deg);
   margin: 70px 10px;
   display: inline-block;
+}
+
+#header-button {
+  width: 25%;
+  font-size: 16px;
+  background-color: #77bae9;
+  float: right;
+  padding: 7px;
 }
 
 #add-new-todo-button {
