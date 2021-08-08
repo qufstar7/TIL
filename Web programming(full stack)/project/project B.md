@@ -602,3 +602,90 @@ JSTL은 jsp페이지에서 조건문, 반복문 처리 등을 html태그의 형�
 <script type="text/javascript" src="./main.js?v=<%=System.currentTimeMillis() %>"></script>
 </html>
 ```
+
+## 6. TodoFormServlet, todoForm.jsp 작성
+
+## 6-1. TodoFormServlet
+### 코드
+```java
+package kr.or.connect.TodoList.main;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/TodoFormServlet")
+public class TodoFormServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public TodoFormServlet() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("/todoForm.jsp");
+		rd.forward(request, response);
+	}
+
+}
+```
+
+## 6-2. todoForm.jsp
+
+### 코드
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>add new todo</title>
+<link rel="stylesheet" href="todoForm.css?after">
+</head>
+
+<body>
+<div>
+  <p><h1 style="text-align:center;">새로운 TODO 등록</h1></p>
+  <section>
+    <form action="http://localhost:8080/TodoList/TodoAddServlet" method="post">
+      <div class="input">
+        <label for="title" class="content">어떤 일인가요?</label><br>
+        <input type="text" class="content" name = "title" placeholder="java공부하기" size=40 maxlength=24><br>
+      </div>
+
+      <div class="input">
+        <label for="name" class="content">누가 할 일인가요?</label><br>
+        <input type="text" class="content" name = "name" placeholder="홍길동"><br>
+      </div>
+
+      <div class="input">
+        <label for="seqeunce" class="content">우선순위를 선택하세요</label><br>
+        <input type="radio" class="content" name = "sequence" value=1 checked>1위
+        <input type="radio" class="content" name = "sequence" value=2>2위
+        <input type="radio" class="content" name = "sequence" value=3>3위<br>
+      </div>
+
+      <div class="input">
+        <input type="reset" class="form-btn" value="내용 지우기">
+		<input type="submit" class="form-btn" value="제출">
+      </div>
+      
+    </form>
+    
+    <div class="input">
+      <button id="back" onclick="location.href='http://localhost:8080/TodoList/MainServlet' ">이전</button>
+    </div>
+      
+  </section>
+  
+</div>
+</body>
+</html>
+```
