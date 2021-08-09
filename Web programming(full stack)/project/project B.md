@@ -602,6 +602,74 @@ JSTL은 jsp페이지에서 조건문, 반복문 처리 등을 html태그의 형�
 <script type="text/javascript" src="./main.js?v=<%=System.currentTimeMillis() %>"></script>
 </html>
 ```
+### 5.3 add, get, update 기능 확인용 실습
+* addExam.java
+	```JAVA	
+	package kr.or.connect;
+
+	import kr.or.connect.dao.TodoDao;
+	import kr.or.connect.dto.TodoDto;
+
+	public class addExam {
+		public static void main(String[] args) {
+			String title = "0000하기";
+			String name = "김철수";
+			int sequence = 22;
+
+			TodoDto todoDto = new TodoDto(null, name, null, sequence, title, null);
+
+			TodoDao dao = new TodoDao();
+			int insertCount = dao.addTodo(todoDto);
+
+			System.out.println(insertCount);
+		}
+	}
+	```
+* getExam.java
+	```JAVA
+	package kr.or.connect;
+
+	import java.util.List;
+
+	import kr.or.connect.dao.TodoDao;
+	import kr.or.connect.dto.TodoDto;
+
+	public class getExam {
+		public static void main(String[] args) {
+
+			TodoDao dao = new TodoDao();
+
+			List<TodoDto> list = dao.getTodo();
+
+			for (TodoDto todoDto : list) {
+				System.out.println(todoDto);
+			}
+		}
+	}
+	```
+* update.java
+	```JAVA
+	package kr.or.connect;
+
+	import kr.or.connect.dao.TodoDao;
+	import kr.or.connect.dto.TodoDto;
+
+	public class updateExam {
+		public static void main(String[] args) {
+
+			long id = 1;
+			String type = "Doing";
+					
+			TodoDto todoDto = new TodoDto(id, null, null, null, null, type);
+
+			TodoDao dao = new TodoDao();
+			int updateCount = dao.updateTodo(todoDto);
+
+			System.out.println(updateCount);
+		}
+	}
+	```
+
 
 ## 6. TodoFormServlet, todoForm.jsp 작성
 
