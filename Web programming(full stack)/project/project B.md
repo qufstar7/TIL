@@ -527,11 +527,13 @@ public class MainServlet extends HttpServlet {
 ```
 * 사용법
   * jsp의 스크립트 요소(스크립트릿, 표현식, 선언부)를 제외한 나머지 부분에서 사용될 수 있으며, 표현식을 통해서 표현식보다 편리하게 값을 출력할 수 있다.
+  * `${todoDto.getName}`과 같은 방식으로 사용
 ### JSTL
 JSTL은 jsp페이지에서 조건문, 반복문 처리 등을 html태그의 형태로 작성할 수 있게 도와준다.
 * 사용하려면
   * >[jar파일 다운로드 사이트](http://tomcat.apache.org/download-taglibs.cgi)
   * 위 사이트에서 3가지 jar파일을 다운로드한 후 WEB-INF/lib/ 폴더에 복사
+  * `<c:forEach var="" items=""></c:forEach>`와 같은 태그 사용
 ### main.jsp 작성코드
 ```jsp
 <%@page import="java.util.ArrayList"%>
@@ -560,8 +562,8 @@ JSTL은 jsp페이지에서 조건문, 반복문 처리 등을 html태그의 형�
   </section>
   <section id = "TODO" class="com">
     <p class="title">TODO</p>
-    <c:forEach var="todo" items="${dtoList}">
-		<c:if test="${todo.getType() eq 'TODO'}">
+    <c:forEach var="todoDto" items="${dtoList}">
+		<c:if test="${todoDto.getType() eq 'TODO'}">
 		    <section class="content">
 		      <p class="content-title">${todo.getTitle() }</p>
 		      <p class="content-data">등록날짜 : ${todo.getRegDate() }, ${todo.getName() } 우선순위 : ${todo.getSequence() }</p>
@@ -757,3 +759,22 @@ public class TodoFormServlet extends HttpServlet {
 </body>
 </html>
 ```
+
+
+EL 표현언어
+값을 표ㅕ현하는데 사용되는 스클립트 언어
+
+jsp 문법 보완
+슼토프
+집합객체 접근방법제공
+수치연산 관계연산 논리연산자 제공
+자바 클래스 메소드 호출기능 제공
+표현 언어 만의 기본 객체 제공
+
+jstl안에서 사용도 가능하고 다양하게 사용할 수있다.
+jsp의 스크립트요소 즉 스크립트릿 푷7ㅕㄴ식 선언부를 제외한 나머지 부분에서 사용될 수 있다
+
+주로 page, scope, header, cookie 관련 기본 객체들이 있다. 
+
+${pageContext.request.requestURI}<br>
+el에 익숙해지면 자바코드를 사용하는 것보다 더 깔끔하게 jsp파일을 작성 가능
