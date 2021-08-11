@@ -483,6 +483,7 @@ public class updateExam {
 package kr.or.connect.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -491,7 +492,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import kr.or.connect.dao.TodoDao;
 import kr.or.connect.dto.TodoDto;
 
@@ -499,15 +499,17 @@ import kr.or.connect.dto.TodoDto;
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public MainServlet() {
-		super();
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		TodoDao dao = new TodoDao();
-		List<TodoDto> todoDtoList = dao.getTodo();
-		request.setAttribute("todoDtoList", todoDtoList);
+		List<TodoDto> dtoList = new ArrayList<TodoDto>();
+		dtoList = dao.getTodo();
+
+		// TodoList를 request scope에 저장
+		request.setAttribute("dtoList", dtoList);
+
+		// MainServlet에서 main.jsp로 forwarding
 		RequestDispatcher rd = request.getRequestDispatcher("/main.jsp");
 		rd.forward(request, response);
 	}
@@ -537,72 +539,105 @@ JSTL은 jsp페이지에서 조건문, 반복문 처리 등을 html태그의 형�
 ### main.jsp 작성코드
 ```jsp
 <%@page import="java.util.ArrayList"%>
-<%@page import="kr.or.connect.TodoList.dto.TodoDto"%>
+<%@page import="kr.or.connect.dto.TodoDto"%>
 <%@page import="java.util.List"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width">
-<title>Todo-List</title>
-<link rel="stylesheet" href="main.css?after">
+<title>PJT2_TODO-LIST</title>
+<link rel="stylesheet" href="/mainstyle.css">
 </head>
-<body>
-	
-<header>
-  <button class="new" onclick="location.href='http://localhost:8080/TodoList/TodoFormServlet'">할일 등록</button>
-</header>
 
-<section id = "sec-body">
-  <section id = "left" class="com" style="width:100px">
-  </section>
-  <section id = "TODO" class="com">
-    <p class="title">TODO</p>
-    <c:forEach var="todoDto" items="${dtoList}">
-		<c:if test="${todoDto.getType() eq 'TODO'}">
-		    <section class="content">
-		      <p class="content-title">${todo.getTitle() }</p>
-		      <p class="content-data">등록날짜 : ${todo.getRegDate() }, ${todo.getName() } 우선순위 : ${todo.getSequence() }</p>
-		      <button id="${todo.getId()}#${todo.getType()}" class="nextType" onclick="next(id)">-></button>
-		    </section>
-		</c:if>
-  	</c:forEach>
-  </section>
-  <section id = "DOING" class="com">
-    <p class="title">DOING</p>
-        <c:forEach var="todo" items="${dtoList}">
-		<c:if test="${todo.getType() eq 'DOING'}">
-		    <section class="content">
-		      <p class="content-title">${todo.getTitle() }</p>
-		      <p class="content-data">등록날짜 : ${todo.getRegDate() }, ${todo.getName() } 우선순위 : ${todo.getSequence() }</p>
-		      <button id="${todo.getId()}#${todo.getType()}" class="nextType" onclick="next(id)">-></button>
-		    </section>
-		</c:if>
-  		</c:forEach>
-  </section>
-  <section id = "DONE" class="com">
-    <p class="title">DONE</p>
-        <c:forEach var="todo" items="${dtoList}">
-		<c:if test="${todo.getType() eq 'DONE'}">
-		    <section class="content">
-		      <p class="content-title">${todo.getTitle() }</p>
-		      <p class="content-data">등록날짜 : ${todo.getRegDate() }, ${todo.getName() } 우선순위 : ${todo.getSequence() }</p>
-		      <c:set var="vid3" scope="request" value="${todo.getId() }"/>
-		      <button id="${todo.getId()}#${todo.getType()}" class="nextType" onclick="buttonDelete(id)">X</button>
-		    </section>
-		</c:if>
-  		</c:forEach>
-  </section>  
-</section>
-  
+<body>
+
+	<header>
+		<div id="header-box">
+			<h1 id="todo-title">나의 해야할 일들</h1>
+			<button id="header-button"
+				onclick="location.href='http://localhost:8080/TodoList/TodoFormServlet'">새로운
+				TODO 등록</button>
+		</div>
+	</header>
+
+	<section id="main-content">
+		<section id="left-section">
+			<div class="title">
+				<h1>TODO</h1>
+			</div>
+			<c:forEach var="todoDto" items="${todoDtoList }">
+				<c:if test="${todoDto.getType() eq 'TODO' }">
+					<div class="card">
+						<p>${todoDto.getTitle() }</p>
+						<p>
+							등록날짜:${todoDto.getRegDate() }, ${todoDto.getName }, 우선순위
+							${todoDto.getSequence }
+							<button class="card-button">
+								<img src="/right-arrow"
+									alt="right arrow from flaticon.com by Lyolya">
+							</button>
+						</p>
+					</div>
+				</c:if>
+			</c:forEach>
+		</section>
+
+		<section id="mid-section">
+			<div class="title">
+				<h1>DOING</h1>
+			</div>
+			<c:forEach var="todoDto" items="${todoDtoList }">
+				<c:if test="${todoDto.getType() eq 'DOING' }">
+
+					<div class="card">
+						<p>${todoDto.getTitle() }</p>
+						<p>
+							등록날짜:${todoDto.getRegDate() }, ${todoDto.getName }, 우선순위
+							${todoDto.getSequence }
+							<button class="card-button">
+								<img src="/right-arrow"
+									alt="right arrow from flaticon.com by Lyolya">
+							</button>
+						</p>
+					</div>
+				</c:if>
+			</c:forEach>
+		</section>
+
+		<section id="right-section">
+			<div class="title">
+				<h1>DONE</h1>
+			</div>
+			<c:forEach var="todoDto" items="${todoDtoList }">
+				<c:if test="${todoDto.getType() eq 'DONE' }">
+
+					<div class="card">
+						<p>${todoDto.getTitle() }</p>
+						<p>
+							등록날짜:${todoDto.getRegDate() }, ${todoDto.getName }, 우선순위
+							${todoDto.getSequence }
+							<button class="card-button">
+								<img src="/right-arrow"
+									alt="right arrow from flaticon.com by Lyolya">
+							</button>
+						</p>
+					</div>
+				</c:if>
+			</c:forEach>
+		</section>
+	</section>
+
 </body>
 
-<script type="text/javascript" src="./main.js?v=<%=System.currentTimeMillis() %>"></script>
 </html>
+
 ```
 ### 5.3 add, get, update 기능 확인용 실습
 * addExam.java
