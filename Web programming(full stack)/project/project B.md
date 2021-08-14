@@ -860,3 +860,30 @@ public class TodoFormServlet extends HttpServlet {
 </body>
 </html>
 ```
+
+## 6-3 todoForm.css 추가
+```css
+@charset "UTF-8";
+
+.input{
+  margin : 2% 30%;
+}
+
+.content{
+  font-size:18px;
+  margin:10px;
+}
+
+.form-btn{
+  background-color:#87d8ff;
+  padding:5px 22px;
+  float:right;
+  margin:10px;
+}
+
+#back{
+  background-color:white;
+  padding:5px 25px;
+  margin:10px;  
+}
+```
