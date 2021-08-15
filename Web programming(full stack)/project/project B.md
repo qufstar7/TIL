@@ -887,3 +887,44 @@ public class TodoFormServlet extends HttpServlet {
   margin:10px;  
 }
 ```
+
+## 7. 버튼 기능 만들기
+### main.jsp에 todoNext()함수 추가
+```java
+function todoNext(bid){
+	var oReq = new XMLHttpRequest();
+	oReq.addEventListener("load", function() {
+		window.location.reload();
+	});
+	oReq.open("GET", "http://localhost:8080/TodoList/TodoTypeServlet?id=" + bid); 
+	oReq.send();
+}
+```
+### TodoTypeServlet 작성
+```java
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	TodoDao dao  = new TodoDao();
+	Long id = Long.parseLong(request.getParameter("id"));
+	dao.updateTodo(id);
+}
+```
+## 8. 삭제 기능 만들기
+### main.jsp에 todoDelete()함수 추가
+```java
+function buttonDelete(bid){
+	var oReq = new XMLHttpRequest();
+	oReq.addEventListener("load", function() {
+		window.location.reload();
+	});
+	oReq.open("GET", "http://localhost:8080/TodoList/TodoDeleteServlet?id=" + bid); 
+	oReq.send();
+}
+```
+### TodoDeleteServlet
+```java
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	TodoDao dao = new TodoDao();
+	Long id = Long.parseLong(request.getParameter("id"));
+	dao.deleteTodo(id);
+}
+```
