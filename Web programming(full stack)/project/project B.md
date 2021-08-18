@@ -1025,3 +1025,61 @@ function buttonDelete(bid){
 	oReq.send("type=" + type + "&id=" + id);
 }
 ```
+
+### 9-2 TodoTypeServlet
+```java
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+		response.setCharacterEncoding("utf-8");
+		// 응답으로 보낼 데이터 타입을 json으로 설정
+		response.setContentType("application/json");
+		
+		// 클라이언트에서 보낸 데이터를 받음
+		Long id = Long.parseLong(request.getParameter("id"));
+		String type = request.getParameter("type");
+		
+		// id와 일치하는 할 일의 type을 변경
+		TodoDao dao = new TodoDao();
+		dao.updateTodo(id);
+		
+		List<TodoDto> list = dao.getTodos();
+		List<TodoDto> jsonList = new ArrayList<TodoDto>();
+		
+		// 변경된 할 일 목록을 list에 저장
+		for(TodoDto dto : list) {
+			if(type.equals("TODO") && dto.getType().equals("DOING")) {
+				jsonList.add(dto);
+			}
+			else if(type.equals("DOING") && dto.getType().equals("DONE")) {
+				jsonList.add(dto);
+			}
+		}
+		
+		// list를 json형식으로 변경하기 위해 ObjectMapper 객체 생성
+		ObjectMapper ob = new ObjectMapper();
+		String json = ob.writeValueAsString(jsonList);
+		
+		// json 파일을 전송
+		PrintWriter out = response.getWriter();
+		out.println(json);
+		out.close();
+	}
+```
+### 9-3 TodoDeleteServlet
+```java
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+		
+		TodoDao dao = new TodoDao();
+		Long id = Long.parseLong(request.getParameter("id"));
+		dao.deleteTodo(id);
+	}
+```
