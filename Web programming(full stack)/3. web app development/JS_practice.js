@@ -147,3 +147,30 @@ while (n < 3) {
   console.log("n = ", n, ", x = ", x);
 }
 console.log();
+
+// ************object************
+var myFriend = {
+  key: "value",
+  addition: [{ name: "codesquad" }, { age: 2 }],
+};
+console.log(myFriend.key);
+console.log(myFriend["key"]);
+console.log(myFriend.addition[0].name, myFriend.addition[1].age);
+console.log();
+
+for (value in myFriend) {
+  console.log(value);
+}
+console.log();
+
+for (key in myFriend) {
+  console.log(myFriend[key]);
+}
+console.log();
+
+console.log(Object.keys(myFriend));
+console.log();
+
+Object.keys(myFriend).forEach(function (v) {
+  console.log(myFriend[v]);
+});
