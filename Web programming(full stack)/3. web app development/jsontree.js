@@ -92,7 +92,8 @@ const jsonTree = [
   },
 ];
 
-// type이 sk인, name으로 구성된 배열만 출력
+// 실습 문제 : type이 sk인, name으로 구성된 배열만 출력
+// 방법 1 (for-in문 전체 탐색 중 조건문 나열)
 var findsk = function (tree, type, arr) {
   for (const key in tree) {
     var temp;
@@ -111,24 +112,20 @@ var findsk = function (tree, type, arr) {
 
   return arr;
 };
-
 console.log(findsk((tree = jsonTree[0]), (type = "sk"), (arr = [])));
 
-// 방법 2
-function findsk2(jsonTree, result) {
-  if (jsonTree.type == "sk") {
+// 방법 2 (재귀)
+var result = [];
+function Func(jsonTree, result) {
+  if (jsonTree.type === "sk") {
     result.push(jsonTree.name);
   }
 
   for (key in jsonTree) {
-    if (typeof jsonTree[key] == "object") {
-      findsk2(jsonTree[key], result);
+    if (typeof jsonTree[key] === "object") {
+      Func(jsonTree[key], result);
     }
   }
-
   return result;
 }
-
-var result = [];
-
-console.log(findsk2(jsonTree, result));
+console.log(Func(jsonTree, result));

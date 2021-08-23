@@ -25,12 +25,13 @@ const data = {
   },
 };
 
-// 'data' 객체에서 숫자 타입으로만 구성된 요소를 뽑아 배열을 출력
+// 'data' 객체에서 숫자 타입으로만 구성된 요소(key값만)를 뽑아 배열을 출력
+
 var result = [];
-for (key in data) {
-  if (typeof data[key] === "object") {
-    for (value in data[key]) {
-      if (typeof data[key][value] === "number") {
+for (value in data) {
+  if (typeof data[value] === "object") {
+    for (key in data[value]) {
+      if (typeof data[value][key] === "number") {
         result.push(value);
       }
     }
