@@ -1,14 +1,18 @@
 [
-    {"name" : "crong",
-    "favorites" : ["golf", "facebook"]
+    {
+        "name" : "crong",
+        "favorites" : ["golf", "facebook"]
     },
-    {"name" : "jk",
-    "favorites" : ["soccor", "apple"]
+    {
+        "name" : "jk",
+        "favorites" : ["soccer", "apple"]
     },
-    {"name" : "honux",
-    "favorites" : ["game", "orange"]
+    {
+        "name" : "honux",
+        "favorites" : ["game", "orange"]
     },
-    {"name" : "pobi",
-    "favorites" : ["book", "youtube"]
-    },    
+    {
+        "name" : "pobi",
+        "favorites" : ["book", "youtube"]
+    },
 ]
