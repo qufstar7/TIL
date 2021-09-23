@@ -1,0 +1,68 @@
+<html>
+  <header>
+    <style>
+      h2 {
+        text-align: center;
+        margin: 0px;
+      }
+      .tab {
+        width: 600px;
+        margin: 0px auto;
+      }
+      .tabmenu {
+        background-color: disque;
+      }
+      .tabmenu > div {
+        display: inline-block;
+        width: 140px;
+        margin: 0px;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+      }
+      .content {
+        background-color: antiquewhite;
+        padding: 5%;
+      }
+    </style>
+  </header>
+  <body>
+    <h2>TAB UI TEST</h2>
+    <div class="tab">
+      <div class="tabmenu">
+        <div>crong</div>
+        <div>jk</div>
+        <div>pobi</div>
+        <div>honux</div>
+      </div>
+      <section class="content">
+        <h4>hello jk</h4>
+        <p>golf, facebook</p>
+      </section>
+    </div>
+  </body>
+  <script>
+    function makeTemplate(data) {
+      var html = document.getElementById("tabcontent").innerHTML;
+      console.log(html, data);
+    }
+
+    function sendAjax(url) {
+      var oReq = new XMLHttpRequest();
+      oReq.addEventListener("load", function () {
+        var data = JSON.parse(oReq.responseText);
+      });
+      oReq.open("GET", url);
+      oReq.send();
+    }
+    var tabmenu = document.querySelector(".tabmenu");
+    tabmenu.addEventListener("click", function (evt) {
+      //console.log(evt.target.innerText);
+      sendAjax("./json.txt");
+    });
+  </script>
+  <script id="tabcontent" type="my-template">
+    <h4>hello {name}</h4>
+    <p>{favorties}</p>
+  </script>
+</html>

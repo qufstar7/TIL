@@ -1,0 +1,14 @@
+[
+    {"name" : "crong",
+    "favorites" : ["golf", "facebook"]
+    },
+    {"name" : "jk",
+    "favorites" : ["soccor", "apple"]
+    },
+    {"name" : "honux",
+    "favorites" : ["game", "orange"]
+    },
+    {"name" : "pobi",
+    "favorites" : ["book", "youtube"]
+    },    
+]
