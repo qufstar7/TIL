@@ -1,6 +1,21 @@
 # 입력
-n = int(input("숫자를 입력하세요: "))
+n = int(input())
 
+# 방법1(30점) - 약수의 개수
+# 소수를 담을 리스트 선언
+list = []
+# 약수의 개수를 구해 소수리스트 구하기
+for i in range(1, n + 1):
+    cnt = 0
+    for j in range(2, i+1):
+        if i % j == 0:
+            cnt += 1
+    if cnt == 1:
+        list.append(i)
+# 출력
+print(len(list))
+
+# 방법2(70점) - 에라토스테네스의 체
 # 블리언 리스트 생성 및 True로 초기화
 plist = [True] * n
 
@@ -15,9 +30,10 @@ for i in range(1, m+1):
         for j in range(i+i, n, i):
             plist[j] = False;
 
-# 소수 개수 구하고 출력
+# 소수 개수 구하기
 cnt = 0
 for i in range(1, n):
     if plist[i] == True:
         cnt += 1
+# 출력
 print(cnt)
