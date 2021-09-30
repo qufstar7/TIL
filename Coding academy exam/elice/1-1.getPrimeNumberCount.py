@@ -3,7 +3,7 @@ n = int(input())
 
 # 방법1(30점) - 약수의 개수
 # 소수를 담을 리스트 선언
-list = []
+plist = []
 # 약수의 개수를 구해 소수리스트 구하기
 for i in range(1, n + 1):
     cnt = 0
@@ -11,9 +11,9 @@ for i in range(1, n + 1):
         if i % j == 0:
             cnt += 1
     if cnt == 1:
-        list.append(i)
+        plist.append(i)
 # 출력
-print(len(list))
+print(len(plist))
 
 # 방법2(70점) - 에라토스테네스의 체
 # 블리언 리스트 생성 및 True로 초기화
