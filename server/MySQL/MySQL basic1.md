@@ -172,7 +172,7 @@
 * MySQL을 직접 다운받아도 된다.
 * 설치하지않고 codeanywhere.com을 사용해도 된다.
 * bitnami wamp를 다운받아도 된다.
-  * Apache와 MySQL를 실습하고 사용하기 떄문에 bitnami wamp를 다운받아 사용 결정.
+  * Apache와 MySQL를 실습하고 사용하기 때문에 bitnami wamp를 다운받아 사용 결정.
 
 ## 설치 후 실행 실습
 ![mysqlFileInWAMPstack_image](image/mysqlFileInWAMPstack_image.png)

@@ -231,7 +231,7 @@ ip address가 지정된다. 그리고 웹서버를 만들고 클라이언트가 
 오후 3:00
 ## Dynamic Host Configuration Protocol
 ![DHCP_image1](image/DHCP_image1.png)
-* 같은 공유기 안에서 여러 기기가 연결되어 있을 떄 ip 주소는 중복되면 안된다
+* 같은 공유기 안에서 여러 기기가 연결되어 있을 때 ip 주소는 중복되면 안된다
 * ip주소를 지정해 줘야한다. 하지만 실제로 직접 하지는 않는다.>>복잡하고 어려움
 * DHCP가 자동으로 복잡하고 다양한 정보를 지정을 해준다.
 * 공유기에 DHCP Server라는 프로그램 내장되어있음.

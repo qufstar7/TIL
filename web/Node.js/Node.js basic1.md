@@ -377,7 +377,7 @@ name === 1; //비교연산자 ==도
 ## program's I/O
 * 프로그램은 IO(input과 output)으로 이루어져 있다.
 ![console_image](image/console_image.png)
-* 살펴볼 Input은 console에서 명령어를 실행할떄 입력값을 주는 방법
+* 살펴볼 Input은 console에서 명령어를 실행할때 입력값을 주는 방법
 * 그거에 따라서 프로그램이 내부에서 조건문을 이용해서 입력 값이 무엇이냐에 따라서 다르게 동작해서 다른 아웃품을 출력하는 프로그램을 만들어보자 (실용성은 x)
 
 ## 콘솔 실습

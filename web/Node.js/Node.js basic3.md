@@ -603,7 +603,7 @@ location.href = 'http://opentutorials.org';
     "sanitize-html": "^2.3.3"
   }
 ```
-예전에 pm2를 인스톨할떄는 -g를 썼다. global약자 Pm2를 이컴퓨터 전역에서 어디서나 쓸 수 있는 독립된 프로그램으로 깐것 
+예전에 pm2를 인스톨할때는 -g를 썼다. global약자 Pm2를 이컴퓨터 전역에서 어디서나 쓸 수 있는 독립된 프로그램으로 깐것 
 -S하면 프로젝트에서 사용할 작은 조각으로서 부품으로서 다운로드한다.
 
 ### sanitize-html과 의존성 설명
