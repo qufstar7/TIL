@@ -211,7 +211,7 @@ mysql> SELECT * FROM topic;
     +----+------------+-------------------+---------------------+--------+---------------------------+
     5 rows in set (0.00 sec)
 
-* id를 topic_id로 보이게 (
+* id를 topic_id로 보이게
   * SELECT topic.id AS **topic_id**
     ```sql
     mysql> SELECT topic.id AS topic_id,title,description,created,name,profile FROM topic LEFT JOIN author ON topic.author_id = author.id;
