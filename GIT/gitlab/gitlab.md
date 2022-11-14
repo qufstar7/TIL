@@ -1,4 +1,8 @@
 # gitlab
+> [깃허브 vs. 깃랩, 무엇을 써야할까](https://zdnet.co.kr/view/?no=20220804135812)
+> 
+> [Gitlab 소개](https://opentutorials.org/module/567/4933)
+
 ## gitlab 소개
 ### git
 * 분산형 버전관리 시스템
