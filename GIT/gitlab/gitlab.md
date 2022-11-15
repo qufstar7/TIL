@@ -36,3 +36,50 @@
   * 인터페이스 (고급 개발자를 위한 CLI, 초급 개발자를 위한 웹 인터페이스)
 ### 요약
 * gitlab은 깃허브와 비슷하지만 깃에 대한 비용이 부담되거나 보안이 중요한 프로젝트에 사용된다.
+
+## gitlab 실행해보기
+1. New project
+   1. Visibility Level 설정
+      1. (private or public)
+   2. Project Configuration
+      * README 설정
+      * SAST(Static Application Security Testing) 설정
+        * 알려진 보안 취약점에 대한 소스 코드 분석
+2. git bash 활용
+   * Git global setup 가능
+   ```bash
+   git config --global user.name "김준하"
+   git config --global user.email "qufstar7@gmail.com"
+   ```
+   * gitlab repo에 사용할 폴더로 이동 후 git init, remote
+      ```bash
+      cd existing_folder
+      git init
+      git remote add origin https://~/qufstar7/test.git
+      ```
+      * (git 시동, gitlab repo와 연결)
+   * 파일(코드) 작성 후 add, commit, push
+      ```bash
+      touch README.md
+      dir
+      git add .
+      git commit -m "first commit test"
+      git push -u origin master
+      ```
+   * 기타 사용법
+      ```bash
+      git clone https://~~.git
+      cd test
+      touch README.md
+      git add README.md
+      git commit -m "add README"
+      git push -u origin master
+
+      cd exsting_repo
+      git remote rename origin old-origin
+      git remote add origin https://~/qfustar7/test.git
+      git push -u origin --all
+      git push -u origin --tags
+      ```
+         * git clone으로 repo 복제
+         * 기존의 repo를 새로운 이름의 repo로 연결
