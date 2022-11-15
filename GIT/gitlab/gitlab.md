@@ -83,3 +83,5 @@
       ```
          * git clone으로 repo 복제
          * 기존의 repo를 새로운 이름의 repo로 연결
+* touch README.md 하면 파일을 생성한다. 편집은 vscode와 같은 편집기에서 편리하게 하자.
+* 주의사항: master라는 이름으로 origin을 checkout 하면 main과 이름이 달라 새로운 브랜치가 생성된다.
